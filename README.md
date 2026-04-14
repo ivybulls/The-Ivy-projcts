@@ -1,2 +1,2 @@
 # The-Ivy-projcts
-visual, vArt, Meet  and Create
+visual, Art, Meet  and Create
