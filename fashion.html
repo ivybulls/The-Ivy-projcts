@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Louve Collection — Summer Coats</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --red: #E8000A;
+    --dark-red: #C40008;
+    --white: #FFFFFF;
+    --black: #0A0A0A;
+  }
+
+  body {
+    background: var(--red);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+    cursor: none;
+  }
+
+  /* Custom Cursor */
+  .cursor {
+    width: 14px; height: 14px;
+    background: white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.15s ease, width 0.2s, height 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  .cursor-ring {
+    width: 38px; height: 38px;
+    border: 1.5px solid rgba(255,255,255,0.6);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.35s cubic-bezier(.25,.46,.45,.94), left 0.08s, top 0.08s;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 48px;
+    z-index: 100;
+    mix-blend-mode: normal;
+  }
+
+  nav a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0;
+    width: 0; height: 1px;
+    background: white;
+    transition: width 0.3s;
+  }
+  nav a:hover { color: white; }
+  nav a:hover::after { width: 100%; }
+
+  /* Vertical side text */
+  .side-text {
+    position: fixed;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 100;
+  }
+  .side-text span {
+    writing-mode: vertical-rl;
+    font-size: 8px;
+    letter-spacing: 0.35em;
+    color: rgba(255,255,255,0.55);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* Circle BG */
+  .circle-bg {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.09);
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.04); }
+  }
+
+  /* Model Left */
+  .model-left {
+    position: absolute;
+    left: 6%;
+    bottom: 0;
+    width: 340px;
+    height: 580px;
+    z-index: 10;
+    animation: floatUp 1.2s cubic-bezier(.22,1,.36,1) forwards;
+    opacity: 0;
+  }
+  .model-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    mix-blend-mode: multiply;
+    filter: contrast(1.05);
+  }
+
+  /* Model Right (hero main) */
+  .model-right {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 52%;
+    height: 100%;
+    z-index: 5;
+    animation: slideRight 1.4s cubic-bezier(.22,1,.36,1) forwards;
+    opacity: 0;
+  }
+  .model-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    mix-blend-mode: multiply;
+  }
+
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(60px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideRight {
+    0% { opacity: 0; transform: translateX(80px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Content */
+  .content {
+    position: absolute;
+    right: 6%;
+    top: 50%;
+    transform: translateY(-48%);
+    z-index: 20;
+    max-width: 520px;
+    animation: fadeContent 1.2s 0.3s cubic-bezier(.22,1,.36,1) forwards;
+    opacity: 0;
+  }
+  @keyframes fadeContent {
+    from { opacity: 0; transform: translateY(-40%) translateX(20px); }
+    to { opacity: 1; transform: translateY(-48%) translateX(0); }
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 8vw, 110px);
+    color: white;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    text-shadow: 0 4px 40px rgba(0,0,0,0.3);
+    margin-bottom: 18px;
+  }
+
+  .collection-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .size-tag {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.12em;
+    margin-bottom: 28px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .badge-label {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+    color: white;
+    text-transform: uppercase;
+  }
+  .new-dot {
+    width: 7px; height: 7px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 32px;
+  }
+  .stars span {
+    font-size: 22px;
+    color: white;
+  }
+  .stars span.empty { color: rgba(255,255,255,0.35); }
+
+  .cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: white;
+    color: var(--red);
+    border: none;
+    border-radius: 60px;
+    padding: 18px 48px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    cursor: none;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 16px 50px rgba(0,0,0,0.25);
+  }
+  .cta-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    background: #f0f0f0;
+  }
+  .cta-arrow {
+    font-size: 18px;
+    transition: transform 0.2s;
+  }
+  .cta-btn:hover .cta-arrow { transform: translateX(5px); }
+
+  /* Ticker */
+  .ticker-wrap {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--black);
+    overflow: hidden;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    z-index: 100;
+  }
+  .ticker {
+    display: flex;
+    animation: ticker 18s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-item {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    padding: 0 48px;
+    font-weight: 700;
+  }
+  .ticker-sep {
+    color: var(--red);
+    font-size: 14px;
+    margin: 0 -20px;
+  }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#">Order</a>
+  <a href="#">Order</a>
+  <a href="#">Visit</a>
+  <a href="#">Website</a>
+  <a href="#">Black</a>
+  <a href="#">Fashion</a>
+</nav>
+
+<!-- SIDE TEXT -->
+<div class="side-text">
+  <span>New</span>
+  <span>New</span>
+  <span>New</span>
+  <span>New</span>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="circle-bg"></div>
+
+  <!-- Left model -->
+  <div class="model-left">
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80&fit=crop&crop=top" alt="Model full body" />
+  </div>
+
+  <!-- Right model (bg) -->
+  <div class="model-right">
+    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900&q=80&fit=crop&crop=top" alt="Model close up" />
+  </div>
+
+  <!-- Text content -->
+  <div class="content">
+    <h1 class="hero-title">SUMMER<br>COATS</h1>
+    <p class="collection-name">louve collection</p>
+    <p class="size-tag">size 56i</p>
+    <div class="badge">
+      <div class="new-dot"></div>
+      <span class="badge-label">New Stock</span>
+    </div>
+    <div class="stars">
+      <span>★</span><span>★</span><span>★</span><span>★</span><span class="empty">★</span>
+    </div>
+    <button class="cta-btn">
+      Shop the Collection <span class="cta-arrow">→</span>
+    </button>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Summer Coats</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Louve Collection</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">New Arrivals</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Black Fashion</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Size 56i</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Editorial Luxury</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Summer Coats</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Louve Collection</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">New Arrivals</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Black Fashion</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Size 56i</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Editorial Luxury</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(2.5)';
+      ring.style.transform = 'translate(-50%,-50%) scale(1.5)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+      ring.style.transform = 'translate(-50%,-50%) scale(1)';
+    });
+  });
+</script>
+</body>
+</html>

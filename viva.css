@@ -1,0 +1,16 @@
+p{color: aqua;
+font-size: medium;
+font-weight: bold;}
+h1{
+    color: blue;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    text-emphasis: inherit;
+} 
+header{background-color: aquamarine;
+color: blueviolet;
+margin: auto;
+padding: 2cm;
+text-align: center;
+}

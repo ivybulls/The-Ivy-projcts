@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 Professional Website Designs</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,700;1,300;1,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---- SWITCHER ---- */
+body{background:#111;font-family:'DM Sans',sans-serif;overflow-x:hidden}
+.switcher{
+  position:fixed;top:0;left:0;right:0;z-index:9999;
+  background:rgba(8,8,8,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid #1e1e1e;
+  padding:10px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.sw-label{color:#444;font-size:10px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap;margin-right:4px}
+.sw-btn{
+  padding:7px 16px;border-radius:30px;border:1px solid #2a2a2a;
+  background:transparent;color:#666;cursor:pointer;font-size:12px;
+  font-family:'DM Sans',sans-serif;font-weight:500;transition:all .25s;white-space:nowrap;
+}
+.sw-btn:hover{border-color:#555;color:#ddd}
+.sw-btn.active{background:#fff;color:#000;border-color:#fff;font-weight:600}
+.site{display:none;padding-top:52px}
+.site.active{display:block}
+
+/* ================================================================
+   SITE 1 — TECH SAAS "ARKIVE"  Deep navy + cyan, futuristic
+================================================================ */
+#s1{--c:#0a0f1e;--c2:#0d1528;--acc:#00d4ff;--acc2:#7b2fff;background:var(--c);color:#e2e8f0}
+
+.s1-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:18px 64px;
+  background:rgba(10,15,30,0.85);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(0,212,255,.1);
+}
+.s1-logo{font-family:'Space Mono',monospace;font-size:18px;font-weight:700;color:#fff;letter-spacing:-1px}
+.s1-logo span{color:var(--acc)}
+.s1-navlinks{display:flex;gap:32px;list-style:none}
+.s1-navlinks a{color:#8898aa;text-decoration:none;font-size:14px;transition:color .2s}
+.s1-navlinks a:hover{color:#fff}
+.s1-nav-cta{padding:10px 24px;background:var(--acc);color:#000;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s}
+.s1-nav-cta:hover{filter:brightness(1.15);transform:translateY(-1px)}
+
+/* Video Hero */
+.s1-hero{position:relative;height:90vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.s1-video-bg{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+  background:linear-gradient(135deg,#020818,#0a0f2e,#08121e);
+}
+.s1-video-bg iframe{
+  position:absolute;top:50%;left:50%;
+  width:180%;height:180%;transform:translate(-50%,-50%);
+  pointer-events:none;opacity:.35;border:none;
+}
+.s1-video-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,15,30,.5) 0%,rgba(10,15,30,.2) 50%,rgba(10,15,30,.9) 100%);z-index:1}
+/* Animated particles */
+.s1-particles{position:absolute;inset:0;z-index:1;overflow:hidden}
+.s1-particle{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,.6),transparent);
+  animation:float 8s infinite ease-in-out;
+}
+.p1{width:4px;height:4px;top:20%;left:15%;animation-delay:0s}
+.p2{width:3px;height:3px;top:60%;left:75%;animation-delay:2s}
+.p3{width:5px;height:5px;top:40%;left:85%;animation-delay:4s}
+.p4{width:3px;height:3px;top:80%;left:30%;animation-delay:1s}
+.p5{width:4px;height:4px;top:15%;left:60%;animation-delay:3s}
+.p6{width:2px;height:2px;top:55%;left:45%;animation-delay:5s;background:radial-gradient(circle,rgba(123,47,255,.8),transparent)}
+@keyframes float{0%,100%{transform:translateY(0) scale(1);opacity:.6}50%{transform:translateY(-30px) scale(1.5);opacity:1}}
+
+.s1-hero-content{position:relative;z-index:2;text-align:center;max-width:860px;padding:0 24px}
+.s1-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border:1px solid rgba(0,212,255,.3);border-radius:40px;background:rgba(0,212,255,.07);font-size:12px;color:var(--acc);font-family:'Space Mono',monospace;margin-bottom:32px;letter-spacing:1px}
+.s1-dot{width:6px;height:6px;border-radius:50%;background:var(--acc);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.8)}}
+.s1-hero h1{font-family:'Sora',sans-serif;font-size:clamp(44px,7vw,90px);font-weight:800;line-height:1.04;letter-spacing:-3px;color:#fff;margin-bottom:24px}
+.s1-hero h1 .grd{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.s1-hero p{font-size:18px;color:#8898aa;line-height:1.75;max-width:560px;margin:0 auto 44px}
+.s1-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.s1-btn-p{padding:16px 40px;background:var(--acc);color:#000;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s}
+.s1-btn-p:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,212,255,.35)}
+.s1-btn-g{padding:16px 40px;background:transparent;color:#aaa;border:1px solid #2a3a4a;border-radius:10px;font-size:15px;cursor:pointer;transition:all .2s}
+.s1-btn-g:hover{border-color:#555;color:#fff}
+.s1-scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#445;font-size:11px;letter-spacing:3px;text-transform:uppercase}
+.s1-scroll-line{width:1px;height:48px;background:linear-gradient(to bottom,transparent,rgba(0,212,255,.5));animation:scrollLine 2s infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* Dashboard screenshot */
+.s1-dashboard-section{padding:80px 64px;display:flex;align-items:center;gap:64px;max-width:1300px;margin:0 auto}
+.s1-dashboard-text{flex:1}
+.s1-tag-small{font-family:'Space Mono',monospace;font-size:11px;color:var(--acc);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
+.s1-dashboard-text h2{font-family:'Sora',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:20px;letter-spacing:-1px}
+.s1-dashboard-text p{color:#7a8899;font-size:15px;line-height:1.75;margin-bottom:28px}
+.s1-features-mini{display:flex;flex-direction:column;gap:16px}
+.s1-feat{display:flex;align-items:center;gap:12px;font-size:14px;color:#8898aa}
+.s1-feat-icon{width:32px;height:32px;border-radius:8px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.s1-dashboard-img{flex:1.2;border-radius:16px;overflow:hidden;border:1px solid rgba(0,212,255,.15);box-shadow:0 40px 80px rgba(0,0,0,.6);position:relative}
+.s1-dashboard-img img{height:340px;width:100%;object-fit:cover}
+.s1-dash-glow{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,212,255,.05),transparent);pointer-events:none}
+
+/* Stats */
+.s1-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #0d1825;border-bottom:1px solid #0d1825}
+.s1-stat{padding:40px 20px;text-align:center;border-right:1px solid #0d1825}
+.s1-stat:last-child{border-right:none}
+.s1-stat-n{font-family:'Sora',sans-serif;font-size:44px;font-weight:800;color:#fff}
+.s1-stat-n span{color:var(--acc)}
+.s1-stat-l{font-size:13px;color:#445;margin-top:4px}
+
+/* Feature Cards */
+.s1-section{padding:80px 64px;max-width:1300px;margin:0 auto}
+.s1-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.s1-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:32px;transition:all .3s;cursor:default;position:relative;overflow:hidden}
+.s1-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--acc),transparent);opacity:0;transition:opacity .3s}
+.s1-card:hover::before{opacity:1}
+.s1-card:hover{background:rgba(0,212,255,.05);border-color:rgba(0,212,255,.2);transform:translateY(-4px)}
+.s1-card-icon{font-size:24px;margin-bottom:18px}
+.s1-card h3{font-family:'Sora',sans-serif;font-size:17px;font-weight:600;color:#e2e8f0;margin-bottom:10px}
+.s1-card p{font-size:13px;color:#556;line-height:1.7}
+
+/* Testimonials */
+.s1-testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:50px}
+.s1-testi{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:28px}
+.s1-testi-stars{color:var(--acc);margin-bottom:14px;font-size:13px}
+.s1-testi p{font-size:14px;color:#667;line-height:1.7;font-style:italic;margin-bottom:20px}
+.s1-testi-author{display:flex;align-items:center;gap:12px}
+.s1-avatar-img{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(0,212,255,.3)}
+.s1-avatar-img img{object-fit:cover}
+.s1-tname{font-size:13px;font-weight:600;color:#ccc}
+.s1-trole{font-size:11px;color:#445}
+
+/* CTA banner */
+.s1-cta-banner{
+  margin:0 64px 80px;border-radius:20px;padding:70px 60px;text-align:center;
+  background:linear-gradient(135deg,rgba(0,212,255,.12),rgba(123,47,255,.08));
+  border:1px solid rgba(0,212,255,.2);position:relative;overflow:hidden;
+}
+.s1-cta-banner::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at center,rgba(0,212,255,.05) 0%,transparent 60%);pointer-events:none}
+.s1-cta-banner h2{font-family:'Sora',sans-serif;font-size:clamp(26px,4vw,48px);font-weight:800;color:#fff;margin-bottom:16px;position:relative}
+.s1-cta-banner p{color:#8898aa;font-size:17px;margin-bottom:36px;position:relative}
+
+/* Footer */
+.s1-footer{border-top:1px solid #0d1825;padding:60px 64px 0}
+.s1-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.s1-footer-brand p{color:#334;font-size:14px;line-height:1.7;margin-top:14px;max-width:240px}
+.s1-fcol h4{font-size:12px;font-weight:600;color:#7a8899;margin-bottom:18px;letter-spacing:2px;text-transform:uppercase}
+.s1-fcol ul{list-style:none}
+.s1-fcol li{margin-bottom:10px}
+.s1-fcol a{color:#334;font-size:14px;text-decoration:none;transition:color .2s}
+.s1-fcol a:hover{color:#7a8899}
+.s1-footer-bottom{border-top:1px solid #0d1825;padding:24px 0;display:flex;justify-content:space-between;font-size:12px;color:#223}
+
+/* ================================================================
+   SITE 2 — RESTAURANT "LUMIÈRE"  Dark gold, cinematic
+================================================================ */
+#s2{background:#0c0b08;color:#e8dcc8}
+
+.s2-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:22px 64px;
+  background:rgba(12,11,8,.88);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(212,172,100,.12);
+}
+.s2-logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#d4ac64;letter-spacing:4px;text-transform:uppercase}
+.s2-navlinks{display:flex;gap:36px;list-style:none}
+.s2-navlinks a{color:#8a7a5a;text-decoration:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;transition:color .2s}
+.s2-navlinks a:hover{color:#d4ac64}
+.s2-nav-res{padding:12px 28px;background:transparent;color:#d4ac64;border:1px solid rgba(212,172,100,.5);font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.s2-nav-res:hover{background:rgba(212,172,100,.1)}
+
+/* Hero with Image */
+.s2-hero{position:relative;height:95vh;overflow:hidden;display:flex;align-items:center;justify-content:flex-end;padding:0 10%}
+.s2-hero-bg{position:absolute;inset:0}
+.s2-hero-bg img{object-fit:cover;width:100%;height:100%;filter:brightness(.65)}
+.s2-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(12,11,8,.95) 0%,rgba(12,11,8,.5) 50%,rgba(12,11,8,.1) 100%)}
+.s2-hero-content{position:relative;z-index:2;max-width:560px;padding-right:4%}
+.s2-hero-eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#d4ac64;margin-bottom:28px;font-family:'DM Sans',sans-serif}
+.s2-hero h1{font-family:'Playfair Display',serif;font-size:clamp(52px,6vw,84px);font-weight:400;line-height:1.08;color:#f2e8d4;margin-bottom:28px;letter-spacing:-1px}
+.s2-hero h1 em{font-style:italic;color:#d4ac64}
+.s2-hero-desc{font-size:16px;color:#8a7a5a;line-height:1.8;margin-bottom:44px;max-width:380px}
+.s2-hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.s2-btn-gold{padding:16px 40px;background:#d4ac64;color:#0c0b08;border:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:all .2s}
+.s2-btn-gold:hover{background:#e8c87c}
+.s2-btn-outline2{padding:16px 40px;background:transparent;color:#d4ac64;border:1px solid rgba(212,172,100,.5);font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.s2-btn-outline2:hover{border-color:#d4ac64;background:rgba(212,172,100,.05)}
+.s2-hero-scroll{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#5a4a2a;font-size:10px;letter-spacing:4px;text-transform:uppercase}
+.s2-scroll-bar{width:1px;height:50px;background:linear-gradient(to bottom,rgba(212,172,100,.6),transparent);animation:s2scroll 2s infinite}
+@keyframes s2scroll{0%{height:0;opacity:0}60%{height:50px;opacity:1}100%{height:0;opacity:0}}
+
+/* Experience strip */
+.s2-strip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(212,172,100,.12);border-bottom:1px solid rgba(212,172,100,.12)}
+.s2-strip-item{padding:40px 32px;display:flex;align-items:center;gap:16px;border-right:1px solid rgba(212,172,100,.12)}
+.s2-strip-item:last-child{border-right:none}
+.s2-strip-icon{font-size:24px;color:#d4ac64}
+.s2-strip-title{font-family:'Playfair Display',serif;font-size:16px;color:#e8dcc8;margin-bottom:4px}
+.s2-strip-desc{font-size:12px;color:#5a4a2a;letter-spacing:1px}
+
+/* Menu section */
+.s2-menu{padding:100px 64px}
+.s2-sec-eyebrow{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#d4ac64;margin-bottom:20px;font-family:'DM Sans',sans-serif}
+.s2-sec-title{font-family:'Playfair Display',serif;font-size:clamp(32px,4vw,56px);font-weight:400;line-height:1.1;color:#f2e8d4;margin-bottom:16px}
+.s2-menu-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px}
+.s2-see-all{font-size:12px;letter-spacing:2px;color:#8a7a5a;text-decoration:none;border-bottom:1px solid rgba(212,172,100,.3);padding-bottom:2px;text-transform:uppercase}
+.s2-menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.s2-dish{cursor:pointer}
+.s2-dish-img{aspect-ratio:4/3;overflow:hidden;margin-bottom:20px;position:relative}
+.s2-dish-img img{transition:transform .6s ease;object-fit:cover;height:100%;width:100%}
+.s2-dish:hover .s2-dish-img img{transform:scale(1.05)}
+.s2-dish-cat{font-size:10px;letter-spacing:4px;color:#6a5a3a;text-transform:uppercase;margin-bottom:8px}
+.s2-dish-name{font-family:'Playfair Display',serif;font-size:22px;color:#e8dcc8;margin-bottom:8px}
+.s2-dish-desc{font-size:13px;color:#5a4a2a;line-height:1.6;margin-bottom:12px}
+.s2-dish-price{font-size:16px;color:#d4ac64;font-family:'Playfair Display',serif}
+
+/* About / Interior */
+.s2-about{display:grid;grid-template-columns:1fr 1fr}
+.s2-about-img{position:relative;min-height:580px}
+.s2-about-img img{position:absolute;inset:0;object-fit:cover;width:100%;height:100%}
+.s2-about-content{padding:80px 64px;background:#0f0e0a;display:flex;flex-direction:column;justify-content:center}
+.s2-about-content h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3vw,46px);font-weight:400;line-height:1.2;color:#f2e8d4;margin-bottom:28px}
+.s2-about-content p{font-size:15px;color:#6a5a3a;line-height:1.8;margin-bottom:16px}
+.s2-gold-line{width:40px;height:1px;background:#d4ac64;margin:24px 0}
+
+/* Video section */
+.s2-video-section{position:relative;height:520px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.s2-video-bg-img{position:absolute;inset:0}
+.s2-video-bg-img img{object-fit:cover;width:100%;height:100%;filter:brightness(.4)}
+.s2-video-overlay2{position:absolute;inset:0;background:rgba(12,11,8,.55)}
+.s2-video-content{position:relative;z-index:2;text-align:center}
+.s2-play-btn{
+  width:80px;height:80px;border-radius:50%;background:rgba(212,172,100,.15);border:2px solid rgba(212,172,100,.6);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;margin:0 auto 24px;
+  transition:all .3s;font-size:22px;color:#d4ac64;
+}
+.s2-play-btn:hover{background:rgba(212,172,100,.3);transform:scale(1.08)}
+.s2-video-content h3{font-family:'Playfair Display',serif;font-size:32px;color:#f2e8d4;margin-bottom:8px}
+.s2-video-content p{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:#8a7a5a}
+/* Inline iframe overlay */
+.s2-video-frame{display:none;position:absolute;inset:0;z-index:10}
+.s2-video-frame.active{display:block}
+.s2-video-frame iframe{width:100%;height:100%;border:none}
+.s2-close-video{position:absolute;top:20px;right:20px;background:rgba(0,0,0,.7);color:#fff;border:none;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;z-index:11}
+
+/* Reservations form */
+.s2-reservation{padding:100px 64px;background:#0f0e0a;text-align:center}
+.s2-res-form{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:16px;max-width:900px;margin:48px auto 0}
+.s2-input{padding:16px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(212,172,100,.2);color:#e8dcc8;font-size:14px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s}
+.s2-input::placeholder{color:#4a3a1a}
+.s2-input:focus{border-color:rgba(212,172,100,.5)}
+.s2-res-submit{padding:16px 32px;background:#d4ac64;color:#0c0b08;border:none;font-size:12px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;white-space:nowrap;transition:all .2s}
+.s2-res-submit:hover{background:#e8c87c}
+
+/* Footer */
+.s2-footer{background:#080807;border-top:1px solid rgba(212,172,100,.1);padding:60px 64px}
+.s2-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.s2-footer h4{font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#d4ac64;margin-bottom:20px;font-family:'DM Sans',sans-serif}
+.s2-footer ul{list-style:none}
+.s2-footer li{margin-bottom:12px}
+.s2-footer a{color:#4a3a1a;font-size:14px;text-decoration:none;transition:color .2s}
+.s2-footer a:hover{color:#8a7a5a}
+.s2-footer-brand p{font-size:14px;color:#4a3a1a;line-height:1.7;max-width:260px;margin-top:14px}
+.s2-footer-bottom{border-top:1px solid rgba(212,172,100,.08);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#3a2a0a}
+
+/* ================================================================
+   SITE 3 — PERSONAL PORTFOLIO "SOLO"  White, editorial, bold
+================================================================ */
+#s3{background:#f8f7f5;color:#1a1a1a}
+
+.s3-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:22px 64px;
+  background:rgba(248,247,245,.92);backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(26,26,26,.08);
+}
+.s3-logo3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#1a1a1a;letter-spacing:-1px}
+.s3-logo3 span{color:#ff4433}
+.s3-navlinks3{display:flex;gap:36px;list-style:none}
+.s3-navlinks3 a{color:#888;text-decoration:none;font-size:13px;letter-spacing:1px;transition:color .2s}
+.s3-navlinks3 a:hover{color:#1a1a1a}
+.s3-nav-hire{padding:10px 24px;background:#ff4433;color:#fff;border:none;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border-radius:6px}
+.s3-nav-hire:hover{background:#e03322;transform:translateY(-1px)}
+
+/* Hero */
+.s3-hero{padding:80px 64px;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;min-height:88vh}
+.s3-hero-left .s3-badge3{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:#888;margin-bottom:32px;letter-spacing:1px}
+.s3-avail-dot3{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,.5);animation:pulse 2s infinite}
+.s3-hero h1{font-family:'Fraunces',serif;font-size:clamp(48px,6vw,82px);font-weight:700;line-height:1.0;letter-spacing:-3px;color:#1a1a1a;margin-bottom:32px}
+.s3-hero h1 .red{color:#ff4433}
+.s3-hero h1 em{font-style:italic;font-weight:300}
+.s3-hero-desc3{font-size:17px;color:#666;line-height:1.75;max-width:420px;margin-bottom:40px}
+.s3-hero-btns3{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.s3-btn-red{padding:16px 36px;background:#ff4433;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.s3-btn-red:hover{background:#e03322;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,68,51,.3)}
+.s3-btn-outline3{padding:15px 36px;background:transparent;color:#1a1a1a;border:1.5px solid #1a1a1a;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+.s3-btn-outline3:hover{background:#1a1a1a;color:#fff}
+.s3-hero-right{position:relative}
+.s3-hero-photo{border-radius:20px;overflow:hidden;aspect-ratio:3/4;position:relative}
+.s3-hero-photo img{object-fit:cover;width:100%;height:100%}
+.s3-hero-card{
+  position:absolute;bottom:24px;left:-32px;
+  background:#fff;border-radius:12px;padding:16px 20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.12);
+  display:flex;align-items:center;gap:12px;
+}
+.s3-card-icon3{font-size:24px}
+.s3-card-title{font-size:14px;font-weight:600;color:#1a1a1a}
+.s3-card-sub{font-size:12px;color:#888}
+.s3-hero-tag{position:absolute;top:24px;right:-20px;background:#ff4433;color:#fff;padding:10px 16px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:1px;transform:rotate(3deg)}
+
+/* Skills strip */
+.s3-skills{display:flex;gap:16px;padding:40px 64px;border-top:1px solid rgba(26,26,26,.08);border-bottom:1px solid rgba(26,26,26,.08);flex-wrap:wrap}
+.s3-skill-tag{padding:10px 20px;background:#fff;border:1.5px solid rgba(26,26,26,.1);border-radius:40px;font-size:13px;color:#444;font-weight:500;white-space:nowrap}
+
+/* Work / Portfolio */
+.s3-work{padding:80px 64px}
+.s3-work-header3{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px}
+.s3-work-header3 h2{font-family:'Fraunces',serif;font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1;letter-spacing:-2px}
+.s3-proj-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;margin-bottom:24px}
+.s3-proj-grid-2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+.s3-proj{border-radius:16px;overflow:hidden;cursor:pointer;position:relative;background:#e8e4de}
+.s3-proj-img{aspect-ratio:16/10;overflow:hidden}
+.s3-proj-img img{transition:transform .5s ease;width:100%;height:100%;object-fit:cover}
+.s3-proj:hover .s3-proj-img img{transform:scale(1.06)}
+.s3-proj-small .s3-proj-img{aspect-ratio:4/3}
+.s3-proj-info{padding:20px 24px;background:#fff}
+.s3-proj-tags{display:flex;gap:8px;margin-bottom:8px;flex-wrap:wrap}
+.s3-proj-tag{font-size:10px;letter-spacing:2px;color:#888;text-transform:uppercase}
+.s3-proj-title{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:#1a1a1a}
+
+/* Video Reel section */
+.s3-reel{padding:80px 64px;background:#1a1a1a;text-align:center}
+.s3-reel h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,52px);font-weight:700;color:#fff;margin-bottom:12px;letter-spacing:-2px}
+.s3-reel p{font-size:15px;color:#666;margin-bottom:48px}
+.s3-reel-player{
+  max-width:900px;margin:0 auto;border-radius:16px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  position:relative;aspect-ratio:16/9;background:#111;
+}
+.s3-reel-player iframe{width:100%;height:100%;border:none}
+.s3-reel-thumb{position:absolute;inset:0;cursor:pointer}
+.s3-reel-thumb img{object-fit:cover;width:100%;height:100%;filter:brightness(.7)}
+.s3-reel-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;background:rgba(255,68,51,.9);display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;transition:transform .3s}
+.s3-reel-thumb:hover .s3-reel-play{transform:translate(-50%,-50%) scale(1.1)}
+
+/* Services / what I offer */
+.s3-services{padding:80px 64px;display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start}
+.s3-services-left h2{font-family:'Fraunces',serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;line-height:1.1;letter-spacing:-1px}
+.s3-services-left p{color:#888;font-size:15px;line-height:1.7;margin-top:16px}
+.s3-service-list{display:flex;flex-direction:column}
+.s3-service-row{display:flex;align-items:center;gap:24px;padding:24px 0;border-bottom:1px solid rgba(26,26,26,.08);cursor:pointer;transition:all .2s}
+.s3-service-row:hover{padding-left:8px}
+.s3-service-num3{font-family:'Fraunces',serif;font-size:14px;color:#ccc}
+.s3-service-name3{font-size:18px;font-weight:600;flex:1;transition:color .2s}
+.s3-service-row:hover .s3-service-name3{color:#ff4433}
+.s3-service-arrow3{font-size:18px;color:#ccc;transition:all .2s}
+.s3-service-row:hover .s3-service-arrow3{color:#ff4433;transform:translateX(6px)}
+
+/* Contact */
+.s3-contact{padding:80px 64px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;background:#fff}
+.s3-contact h2{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,52px);font-weight:700;letter-spacing:-2px;margin-bottom:16px}
+.s3-contact p{color:#888;font-size:16px;line-height:1.7;margin-bottom:32px}
+.s3-contact-email{font-family:'Fraunces',serif;font-size:28px;color:#ff4433;margin-bottom:32px;display:block}
+.s3-contact-right{display:flex;flex-direction:column;gap:16px}
+.s3-form-input{padding:16px 20px;border:1.5px solid rgba(26,26,26,.15);background:#f8f7f5;color:#1a1a1a;font-size:14px;border-radius:10px;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s}
+.s3-form-input:focus{border-color:#ff4433}
+.s3-form-textarea{padding:16px 20px;border:1.5px solid rgba(26,26,26,.15);background:#f8f7f5;color:#1a1a1a;font-size:14px;border-radius:10px;outline:none;font-family:'DM Sans',sans-serif;resize:vertical;min-height:120px;transition:border-color .2s}
+.s3-form-textarea:focus{border-color:#ff4433}
+.s3-form-btn{padding:16px;background:#1a1a1a;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.s3-form-btn:hover{background:#ff4433}
+
+/* Footer */
+.s3-footer3{background:#1a1a1a;padding:40px 64px;display:flex;justify-content:space-between;align-items:center}
+.s3-footer3 span{font-size:13px;color:#444}
+.s3-footer3-socials{display:flex;gap:16px}
+.s3-social-link{color:#444;font-size:13px;text-decoration:none;transition:color .2s}
+.s3-social-link:hover{color:#ff4433}
+
+/* ================================================================
+   SITE 4 — REAL ESTATE "MERIDIAN"  White + black + forest green
+================================================================ */
+#s4{background:#fff;color:#111}
+
+.s4-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:20px 64px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,.08);
+}
+.s4-logo{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#111;letter-spacing:-1px}
+.s4-logo span{color:#2a6b4a}
+.s4-navlinks4{display:flex;gap:32px;list-style:none}
+.s4-navlinks4 a{color:#888;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.s4-navlinks4 a:hover{color:#111}
+.s4-nav-btns{display:flex;gap:12px}
+.s4-nav-btn4{padding:10px 22px;font-size:13px;font-weight:600;cursor:pointer;border-radius:8px;transition:all .2s;font-family:'DM Sans',sans-serif}
+.s4-nav-btn4.outline{background:transparent;color:#111;border:1.5px solid rgba(0,0,0,.2)}
+.s4-nav-btn4.outline:hover{border-color:#2a6b4a;color:#2a6b4a}
+.s4-nav-btn4.fill{background:#2a6b4a;color:#fff;border:none}
+.s4-nav-btn4.fill:hover{background:#1a5a3a}
+
+/* Hero */
+.s4-hero{position:relative;height:88vh;overflow:hidden}
+.s4-hero-img{position:absolute;inset:0}
+.s4-hero-img img{width:100%;height:100%;object-fit:cover;filter:brightness(.75)}
+.s4-hero-grad{position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.7) 0%,rgba(0,0,0,.3) 50%,transparent 100%)}
+.s4-hero-content{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 64px;max-width:640px}
+.s4-hero-badge{display:inline-flex;gap:8px;align-items:center;background:rgba(42,107,74,.2);border:1px solid rgba(42,107,74,.4);padding:8px 18px;border-radius:6px;font-size:12px;color:#7edba5;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px;width:fit-content}
+.s4-hero h1{font-family:'Outfit',sans-serif;font-size:clamp(44px,6vw,80px);font-weight:700;line-height:1.05;color:#fff;margin-bottom:24px;letter-spacing:-2px}
+.s4-hero p{font-size:17px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:40px}
+.s4-search-box{background:rgba(255,255,255,.97);border-radius:12px;padding:20px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.s4-search-sel{padding:12px 16px;background:#f5f5f5;border:1.5px solid rgba(0,0,0,.1);color:#111;font-size:14px;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;flex:1;min-width:140px}
+.s4-search-btn{padding:12px 28px;background:#2a6b4a;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s}
+.s4-search-btn:hover{background:#1a5a3a}
+
+/* Stats */
+.s4-stats{display:grid;grid-template-columns:repeat(4,1fr);padding:0;border-bottom:1px solid rgba(0,0,0,.08)}
+.s4-stat4{padding:36px 32px;border-right:1px solid rgba(0,0,0,.08);text-align:center}
+.s4-stat4:last-child{border-right:none}
+.s4-stat4-n{font-family:'Outfit',sans-serif;font-size:40px;font-weight:700;color:#111}
+.s4-stat4-n span{color:#2a6b4a}
+.s4-stat4-l{font-size:13px;color:#888;margin-top:4px}
+
+/* Listings */
+.s4-listings{padding:80px 64px}
+.s4-section-header4{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px}
+.s4-section-header4 h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-1px}
+.s4-filter-tabs{display:flex;gap:8px}
+.s4-tab{padding:8px 20px;border-radius:30px;border:1.5px solid rgba(0,0,0,.12);background:transparent;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s}
+.s4-tab.active,.s4-tab:hover{background:#2a6b4a;color:#fff;border-color:#2a6b4a}
+.s4-listing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.s4-listing{border-radius:16px;overflow:hidden;background:#fff;border:1px solid rgba(0,0,0,.08);transition:all .3s;cursor:pointer}
+.s4-listing:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.1)}
+.s4-listing-img{aspect-ratio:4/3;overflow:hidden;position:relative}
+.s4-listing-img img{transition:transform .5s ease;object-fit:cover;width:100%;height:100%}
+.s4-listing:hover .s4-listing-img img{transform:scale(1.05)}
+.s4-listing-badge{position:absolute;top:12px;left:12px;padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px}
+.s4-badge-new{background:#2a6b4a;color:#fff}
+.s4-badge-hot{background:#ef4444;color:#fff}
+.s4-listing-save{position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer}
+.s4-listing-body{padding:20px}
+.s4-listing-price{font-family:'Outfit',sans-serif;font-size:22px;font-weight:700;color:#111;margin-bottom:6px}
+.s4-listing-price span{font-size:14px;font-weight:400;color:#888}
+.s4-listing-address{font-size:13px;color:#888;margin-bottom:14px;display:flex;align-items:center;gap:4px}
+.s4-listing-specs{display:flex;gap:16px;padding-top:14px;border-top:1px solid rgba(0,0,0,.08)}
+.s4-spec{font-size:13px;color:#666;display:flex;align-items:center;gap:4px}
+.s4-spec span{font-weight:600;color:#111}
+
+/* Virtual Tour / Video */
+.s4-tour{padding:80px 64px;background:#f8f9f6;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.s4-tour-text h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,46px);font-weight:700;letter-spacing:-1px;margin-bottom:16px}
+.s4-tour-text p{color:#666;font-size:15px;line-height:1.75;margin-bottom:28px}
+.s4-tour-features{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.s4-tour-feat{display:flex;align-items:center;gap:12px;font-size:14px;color:#444}
+.s4-tour-feat-icon{width:36px;height:36px;border-radius:8px;background:#e8f4ee;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.s4-tour-video{border-radius:20px;overflow:hidden;position:relative;aspect-ratio:16/10}
+.s4-tour-video img{object-fit:cover;width:100%;height:100%;filter:brightness(.75)}
+.s4-tour-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(42,107,74,.9);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;cursor:pointer;transition:all .3s}
+.s4-tour-play:hover{transform:translate(-50%,-50%) scale(1.1);background:#2a6b4a}
+
+/* Agents */
+.s4-agents{padding:80px 64px}
+.s4-agents h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;letter-spacing:-1px;margin-bottom:48px}
+.s4-agent-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.s4-agent{text-align:center}
+.s4-agent-photo{width:100px;height:100px;border-radius:50%;overflow:hidden;margin:0 auto 16px;border:3px solid #e8f4ee}
+.s4-agent-photo img{object-fit:cover;width:100%;height:100%}
+.s4-agent-name{font-size:16px;font-weight:600;margin-bottom:4px}
+.s4-agent-title{font-size:13px;color:#888;margin-bottom:12px}
+.s4-agent-contact{display:flex;justify-content:center;gap:8px}
+.s4-agent-btn{padding:6px 16px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid rgba(42,107,74,.3);color:#2a6b4a;background:transparent;transition:all .2s}
+.s4-agent-btn:hover{background:#2a6b4a;color:#fff;border-color:#2a6b4a}
+
+/* Newsletter */
+.s4-newsletter{padding:80px 64px;background:#111;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.s4-newsletter h2{font-family:'Outfit',sans-serif;font-size:clamp(24px,3vw,40px);font-weight:700;color:#fff;letter-spacing:-1px}
+.s4-newsletter p{color:#666;font-size:15px;margin-top:8px}
+.s4-nl-form{display:flex;gap:0;flex-shrink:0}
+.s4-nl-input{padding:14px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:14px;outline:none;min-width:260px;font-family:'DM Sans',sans-serif}
+.s4-nl-input::placeholder{color:#444}
+.s4-nl-btn{padding:14px 28px;background:#2a6b4a;color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s}
+.s4-nl-btn:hover{background:#1a5a3a}
+
+/* Footer */
+.s4-footer{padding:60px 64px;border-top:1px solid rgba(0,0,0,.08)}
+.s4-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.s4-fcol4 h4{font-size:13px;font-weight:600;color:#111;margin-bottom:18px;text-transform:uppercase;letter-spacing:1px}
+.s4-fcol4 ul{list-style:none}
+.s4-fcol4 li{margin-bottom:10px}
+.s4-fcol4 a{color:#888;font-size:14px;text-decoration:none;transition:color .2s}
+.s4-fcol4 a:hover{color:#2a6b4a}
+.s4-footer-brand p{font-size:14px;color:#888;line-height:1.7;max-width:240px;margin-top:14px}
+.s4-footer-bottom{border-top:1px solid rgba(0,0,0,.08);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#aaa}
+
+/* ================================================================
+   SITE 5 — HEALTHCARE "VITACARE"  Clinical white + deep blue + green
+================================================================ */
+#s5{background:#f0f5ff;color:#1a2340}
+
+.s5-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:18px 64px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(26,35,64,.08);
+  box-shadow:0 2px 20px rgba(0,0,0,.04);
+}
+.s5-logo{font-family:'Outfit',sans-serif;font-size:20px;font-weight:700;color:#1a2340;letter-spacing:-1px}
+.s5-logo span{color:#0066cc}
+.s5-logo sub{font-size:10px;font-weight:400;color:#888;vertical-align:bottom}
+.s5-navlinks5{display:flex;gap:28px;list-style:none}
+.s5-navlinks5 a{color:#666;text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+.s5-navlinks5 a:hover{color:#0066cc}
+.s5-nav-actions5{display:flex;gap:12px;align-items:center}
+.s5-phone{font-size:14px;font-weight:600;color:#1a2340}
+.s5-book-btn{padding:10px 24px;background:#0066cc;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.s5-book-btn:hover{background:#0055aa}
+
+/* Hero */
+.s5-hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh}
+.s5-hero-left{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;background:#fff}
+.s5-hero-label{display:inline-flex;align-items:center;gap:8px;background:#e8f0ff;color:#0066cc;font-size:12px;font-weight:600;padding:8px 16px;border-radius:6px;margin-bottom:28px;width:fit-content;letter-spacing:1px}
+.s5-hero h1{font-family:'Outfit',sans-serif;font-size:clamp(40px,5vw,66px);font-weight:700;line-height:1.08;letter-spacing:-2px;color:#1a2340;margin-bottom:24px}
+.s5-hero h1 span{color:#0066cc}
+.s5-hero-desc5{font-size:16px;color:#666;line-height:1.75;max-width:440px;margin-bottom:36px}
+.s5-hero-btns5{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px}
+.s5-btn-blue{padding:15px 36px;background:#0066cc;color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}
+.s5-btn-blue:hover{background:#0055aa;transform:translateY(-1px)}
+.s5-btn-wh{padding:15px 36px;background:#fff;color:#1a2340;border:1.5px solid rgba(26,35,64,.15);border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;transition:all .2s}
+.s5-btn-wh:hover{border-color:#0066cc;color:#0066cc}
+.s5-trust-badges{display:flex;gap:24px;flex-wrap:wrap}
+.s5-badge5{display:flex;align-items:center;gap:8px;font-size:12px;color:#666}
+.s5-badge5-icon{font-size:18px}
+.s5-hero-right{position:relative;overflow:hidden}
+.s5-hero-right img{object-fit:cover;width:100%;height:100%}
+.s5-hero-stat-card{
+  position:absolute;bottom:32px;left:24px;
+  background:#fff;border-radius:12px;padding:18px 22px;
+  box-shadow:0 20px 60px rgba(0,0,0,.1);
+}
+.s5-stat-card-n{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:#0066cc}
+.s5-stat-card-l{font-size:13px;color:#888}
+
+/* Services */
+.s5-services{padding:80px 64px;background:#fff}
+.s5-sec-header5{margin-bottom:48px;text-align:center}
+.s5-sec-label5{display:inline-block;background:#e8f0ff;color:#0066cc;font-size:11px;font-weight:600;padding:6px 16px;border-radius:20px;margin-bottom:16px;letter-spacing:2px;text-transform:uppercase}
+.s5-sec-title5{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#1a2340;letter-spacing:-1px}
+.s5-service-grid5{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.s5-service-card{background:#f8faff;border:1px solid rgba(0,102,204,.1);border-radius:16px;padding:32px;transition:all .3s;cursor:default}
+.s5-service-card:hover{background:#fff;border-color:#0066cc;transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,102,204,.1)}
+.s5-service-icon5{font-size:28px;margin-bottom:16px}
+.s5-service-card h3{font-family:'Outfit',sans-serif;font-size:18px;font-weight:600;color:#1a2340;margin-bottom:10px}
+.s5-service-card p{font-size:14px;color:#666;line-height:1.7;margin-bottom:16px}
+.s5-learn-more{font-size:13px;color:#0066cc;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:4px}
+
+/* Doctors */
+.s5-doctors{padding:80px 64px}
+.s5-doctors-header{text-align:center;margin-bottom:48px}
+.s5-doctor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.s5-doctor-card{background:#fff;border-radius:16px;overflow:hidden;border:1px solid rgba(26,35,64,.08);transition:all .3s}
+.s5-doctor-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,.08)}
+.s5-doctor-photo{aspect-ratio:1;overflow:hidden}
+.s5-doctor-photo img{object-fit:cover;width:100%;height:100%}
+.s5-doctor-info{padding:20px}
+.s5-doctor-name{font-size:16px;font-weight:700;color:#1a2340;margin-bottom:4px}
+.s5-doctor-spec{font-size:12px;color:#0066cc;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.s5-doctor-rating{display:flex;align-items:center;gap:6px;font-size:13px;color:#666;margin-bottom:14px}
+.s5-stars5{color:#f59e0b}
+.s5-book-doctor{width:100%;padding:10px;background:#f0f5ff;color:#0066cc;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+.s5-book-doctor:hover{background:#0066cc;color:#fff}
+
+/* Video / Testimonials */
+.s5-testimonials{padding:80px 64px;background:#1a2340}
+.s5-testimonials h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;text-align:center;letter-spacing:-1px;margin-bottom:48px}
+.s5-testi-grid5{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.s5-testi-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:28px}
+.s5-testi-rating5{color:#f59e0b;margin-bottom:16px}
+.s5-testi-card p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.75;font-style:italic;margin-bottom:24px}
+.s5-testi-author5{display:flex;align-items:center;gap:12px}
+.s5-testi-av5{width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(0,102,204,.4)}
+.s5-testi-av5 img{object-fit:cover;width:100%;height:100%}
+.s5-testi-n5{font-size:14px;font-weight:600;color:#fff}
+.s5-testi-r5{font-size:12px;color:rgba(255,255,255,.4)}
+
+/* CTA */
+.s5-cta{padding:80px 64px;background:#0066cc;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.s5-cta h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,3.5vw,44px);font-weight:700;color:#fff;letter-spacing:-1px}
+.s5-cta p{color:rgba(255,255,255,.75);font-size:15px;margin-top:8px}
+.s5-cta-btns5{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.s5-cta-btn-w{padding:14px 32px;background:#fff;color:#0066cc;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:all .2s}
+.s5-cta-btn-w:hover{background:#e8f0ff}
+.s5-cta-btn-t{padding:14px 32px;background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s}
+.s5-cta-btn-t:hover{background:rgba(255,255,255,.25)}
+
+/* Footer */
+.s5-footer{padding:60px 64px;background:#0f1628;border-top:1px solid rgba(255,255,255,.05)}
+.s5-footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.s5-fcol5 h4{font-size:12px;font-weight:600;color:#4a6a9a;margin-bottom:18px;letter-spacing:2px;text-transform:uppercase}
+.s5-fcol5 ul{list-style:none}
+.s5-fcol5 li{margin-bottom:10px}
+.s5-fcol5 a{color:#3a4a6a;font-size:14px;text-decoration:none;transition:color .2s}
+.s5-fcol5 a:hover{color:#6a8aaa}
+.s5-footer-brand5 p{font-size:14px;color:#3a4a6a;line-height:1.7;max-width:260px;margin-top:14px}
+.s5-footer-bottom5{border-top:1px solid rgba(255,255,255,.05);padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#2a3a5a}
+
+/* ================================================================
+   SITE 6 — E-COMMERCE "KŌDO" Streetwear  Black + neon lime
+================================================================ */
+#s6{background:#0a0a0a;color:#f0f0f0}
+
+.s6-top-bar{background:#c8ff00;padding:10px 0;text-align:center;font-size:12px;font-weight:700;color:#000;letter-spacing:3px;text-transform:uppercase}
+.s6-nav{
+  position:sticky;top:52px;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;padding:18px 64px;
+  background:rgba(10,10,10,.95);backdrop-filter:blur(16px);
+  border-bottom:1px solid #1a1a1a;
+}
+.s6-logo{font-family:'Outfit',sans-serif;font-size:24px;font-weight:900;color:#fff;letter-spacing:-2px}
+.s6-logo span{color:#c8ff00}
+.s6-navlinks6{display:flex;gap:32px;list-style:none}
+.s6-navlinks6 a{color:#666;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+.s6-navlinks6 a:hover{color:#c8ff00}
+.s6-nav-right{display:flex;align-items:center;gap:20px}
+.s6-nav-icons{display:flex;gap:16px;font-size:18px;color:#666;cursor:pointer}
+.s6-nav-icons span:hover{color:#c8ff00}
+.s6-cart-badge{background:#c8ff00;color:#000;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:-8px;margin-left:-8px}
+
+/* Hero - video style */
+.s6-hero{position:relative;height:95vh;overflow:hidden}
+.s6-hero-bg{position:absolute;inset:0}
+.s6-hero-bg img{object-fit:cover;width:100%;height:100%;filter:brightness(.45)}
+.s6-hero-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.9) 0%,transparent 60%)}
+.s6-hero-content{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:0 64px 80px}
+.s6-hero-inner{max-width:800px}
+.s6-hero-season{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#c8ff00;margin-bottom:16px}
+.s6-hero h1{font-family:'Outfit',sans-serif;font-size:clamp(64px,10vw,140px);font-weight:900;line-height:.92;letter-spacing:-4px;color:#fff;margin-bottom:24px}
+.s6-hero h1 .neon{color:#c8ff00}
+.s6-hero-desc6{font-size:16px;color:rgba(255,255,255,.55);max-width:420px;line-height:1.7;margin-bottom:36px}
+.s6-hero-btns6{display:flex;gap:12px;flex-wrap:wrap}
+.s6-btn-lime{padding:16px 40px;background:#c8ff00;color:#000;border:none;font-size:14px;font-weight:800;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;border-radius:4px}
+.s6-btn-lime:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.s6-btn-ghost6{padding:16px 40px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.2);font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;border-radius:4px}
+.s6-btn-ghost6:hover{border-color:#c8ff00;color:#c8ff00}
+
+/* Ticker */
+.s6-ticker{background:#c8ff00;padding:12px 0;overflow:hidden;border-top:none;border-bottom:none}
+.s6-ticker-inner{display:flex;gap:48px;animation:ticker 25s linear infinite;white-space:nowrap}
+.s6-ticker-item{font-family:'Outfit',sans-serif;font-size:18px;font-weight:900;letter-spacing:2px;color:#000;text-transform:uppercase}
+.s6-ticker-sep{color:rgba(0,0,0,.3)}
+
+/* Featured products */
+.s6-products{padding:80px 64px}
+.s6-products-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.s6-products-header h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-2px;color:#fff}
+.s6-products-header h2 span{color:#c8ff00}
+.s6-see-all6{font-size:13px;color:#666;text-transform:uppercase;letter-spacing:2px;text-decoration:none;border-bottom:1px solid #333;padding-bottom:2px;transition:color .2s}
+.s6-see-all6:hover{color:#c8ff00;border-color:#c8ff00}
+.s6-product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.s6-product{cursor:pointer;background:#111}
+.s6-product-img{aspect-ratio:3/4;overflow:hidden;position:relative}
+.s6-product-img img{transition:transform .5s ease;object-fit:cover;width:100%;height:100%;filter:brightness(.9)}
+.s6-product:hover .s6-product-img img{transform:scale(1.06);filter:brightness(1)}
+.s6-product-badge6{position:absolute;top:12px;left:12px;padding:4px 10px;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.s6-badge-new6{background:#c8ff00;color:#000}
+.s6-badge-sold{background:#333;color:#666}
+.s6-product-info{padding:16px}
+.s6-product-name{font-size:15px;font-weight:700;color:#f0f0f0;margin-bottom:6px;letter-spacing:.5px}
+.s6-product-cat6{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.s6-product-bottom{display:flex;justify-content:space-between;align-items:center}
+.s6-product-price{font-size:16px;font-weight:700;color:#c8ff00}
+.s6-add-btn{width:32px;height:32px;background:#1a1a1a;border:1px solid #2a2a2a;color:#888;border-radius:4px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.s6-add-btn:hover{background:#c8ff00;color:#000;border-color:#c8ff00}
+
+/* Lookbook Video */
+.s6-lookbook{position:relative;height:580px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.s6-lookbook-bg{position:absolute;inset:0}
+.s6-lookbook-bg img{object-fit:cover;width:100%;height:100%;filter:brightness(.35)}
+.s6-lookbook-grad{position:absolute;inset:0;background:linear-gradient(135deg,rgba(200,255,0,.07),rgba(0,0,0,.5))}
+.s6-lookbook-content{position:relative;z-index:2;text-align:center;padding:0 40px}
+.s6-lookbook-label{font-size:11px;letter-spacing:6px;text-transform:uppercase;color:#c8ff00;margin-bottom:20px}
+.s6-lookbook h2{font-family:'Outfit',sans-serif;font-size:clamp(40px,7vw,96px);font-weight:900;color:#fff;letter-spacing:-3px;line-height:.95;margin-bottom:32px}
+.s6-lookbook h2 span{color:#c8ff00}
+.s6-play-large{width:88px;height:88px;border-radius:50%;border:2px solid rgba(200,255,0,.5);background:rgba(200,255,0,.1);display:flex;align-items:center;justify-content:center;font-size:28px;color:#c8ff00;cursor:pointer;margin:0 auto 24px;transition:all .3s}
+.s6-play-large:hover{background:rgba(200,255,0,.2);transform:scale(1.08)}
+
+/* Categories */
+.s6-categories{padding:80px 64px;background:#050505}
+.s6-categories h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:900;letter-spacing:-2px;margin-bottom:40px;color:#fff}
+.s6-cat-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.s6-cat{position:relative;overflow:hidden;cursor:pointer;border-radius:4px}
+.s6-cat-img{aspect-ratio:1;overflow:hidden}
+.s6-cat-img img{transition:transform .5s ease;object-fit:cover;width:100%;height:100%;filter:brightness(.5)}
+.s6-cat:hover .s6-cat-img img{transform:scale(1.08);filter:brightness(.65)}
+.s6-cat-label{position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(0,0,0,.8),transparent)}
+.s6-cat-name{font-family:'Outfit',sans-serif;font-size:24px;font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:4px}
+.s6-cat-count{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:2px}
+
+/* CTA */
+.s6-cta6{padding:80px 64px;background:#c8ff00;display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.s6-cta6 h2{font-family:'Outfit',sans-serif;font-size:clamp(28px,4vw,56px);font-weight:900;color:#000;letter-spacing:-2px;line-height:1}
+.s6-cta6-right{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.s6-cta6-right p{font-size:15px;color:rgba(0,0,0,.65);max-width:320px;line-height:1.6}
+.s6-cta6-right input{padding:14px 20px;background:rgba(0,0,0,.1);border:1.5px solid rgba(0,0,0,.2);color:#000;font-size:14px;outline:none;min-width:280px;border-radius:4px;font-family:'DM Sans',sans-serif}
+.s6-cta6-right input::placeholder{color:rgba(0,0,0,.4)}
+.s6-cta6-btn{padding:14px 32px;background:#000;color:#c8ff00;border:none;font-size:14px;font-weight:800;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:all .2s}
+.s6-cta6-btn:hover{background:#111}
+
+/* Footer */
+.s6-footer{background:#050505;border-top:1px solid #111;padding:60px 64px}
+.s6-footer-top6{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid #111}
+.s6-footer-logo6{font-family:'Outfit',sans-serif;font-size:32px;font-weight:900;color:#fff;letter-spacing:-2px}
+.s6-footer-logo6 span{color:#c8ff00}
+.s6-footer-social6{display:flex;gap:16px}
+.s6-soc-link6{width:40px;height:40px;border:1px solid #1a1a1a;display:flex;align-items:center;justify-content:center;color:#444;font-size:14px;cursor:pointer;transition:all .2s;text-decoration:none}
+.s6-soc-link6:hover{border-color:#c8ff00;color:#c8ff00}
+.s6-footer-grid6{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.s6-fcol6 h4{font-size:11px;font-weight:700;color:#333;margin-bottom:18px;letter-spacing:3px;text-transform:uppercase}
+.s6-fcol6 ul{list-style:none}
+.s6-fcol6 li{margin-bottom:10px}
+.s6-fcol6 a{color:#333;font-size:14px;text-decoration:none;transition:color .2s}
+.s6-fcol6 a:hover{color:#c8ff00}
+.s6-footer-brand6 p{font-size:14px;color:#2a2a2a;line-height:1.7;max-width:260px;margin-top:14px}
+.s6-footer-bottom6{border-top:1px solid #111;padding-top:24px;display:flex;justify-content:space-between;font-size:12px;color:#222}
+
+/* === RESPONSIVE === */
+@media(max-width:960px){
+  .s1-nav,.s2-nav,.s3-nav,.s4-nav,.s5-nav,.s6-nav{padding:16px 24px}
+  .s1-navlinks,.s2-navlinks,.s3-navlinks3,.s4-navlinks4,.s5-navlinks5,.s6-navlinks6{display:none}
+  .s1-section,.s1-cta-banner{padding:60px 24px;margin:0 0 0}
+  .s1-cards,.s1-testi-grid{grid-template-columns:1fr}
+  .s1-stats,.s4-stats,.s5-doctor-grid,.s4-agent-grid{grid-template-columns:1fr 1fr}
+  .s1-footer,.s1-dashboard-section{padding:48px 24px;grid-template-columns:1fr;flex-direction:column}
+  .s1-footer-grid{grid-template-columns:1fr 1fr}
+  .s2-menu,.s2-about,.s2-reservation,.s2-footer,.s2-strip,.s2-menu-grid{grid-template-columns:1fr}
+  .s2-hero{padding:0 6%}
+  .s3-hero,.s3-work,.s3-services,.s3-contact{grid-template-columns:1fr;gap:40px;padding:60px 24px}
+  .s3-proj-grid,.s3-proj-grid-2{grid-template-columns:1fr}
+  .s3-footer3{padding:32px 24px;flex-direction:column;gap:16px}
+  .s4-listings,.s4-tour,.s4-agents,.s4-newsletter,.s4-footer{padding:60px 24px}
+  .s4-listing-grid{grid-template-columns:1fr}
+  .s4-tour{grid-template-columns:1fr}
+  .s4-agent-grid{grid-template-columns:1fr 1fr}
+  .s4-footer-grid,.s4-nl-form{flex-direction:column}
+  .s4-nl-form{flex-direction:column;width:100%}
+  .s5-hero{grid-template-columns:1fr}
+  .s5-hero-left{padding:60px 24px}
+  .s5-services,.s5-doctors,.s5-testimonials,.s5-cta,.s5-footer{padding:60px 24px}
+  .s5-service-grid5,.s5-testi-grid5{grid-template-columns:1fr}
+  .s5-doctor-grid{grid-template-columns:1fr 1fr}
+  .s5-cta{grid-template-columns:1fr}
+  .s5-footer-grid{grid-template-columns:1fr 1fr}
+  .s6-hero-content,.s6-products,.s6-lookbook-content,.s6-categories,.s6-cta6,.s6-footer{padding:60px 24px}
+  .s6-product-grid,.s6-cat-grid{grid-template-columns:1fr 1fr}
+  .s6-footer-grid6{grid-template-columns:1fr 1fr}
+  .s6-top-bar{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SWITCHER -->
+<div class="switcher">
+  <span class="sw-label">Example</span>
+  <button class="sw-btn active" onclick="show(1,this)">🚀 Tech SaaS</button>
+  <button class="sw-btn" onclick="show(2,this)">🍽️ Restaurant</button>
+  <button class="sw-btn" onclick="show(3,this)">👤 Portfolio</button>
+  <button class="sw-btn" onclick="show(4,this)">🏡 Real Estate</button>
+  <button class="sw-btn" onclick="show(5,this)">🏥 Healthcare</button>
+  <button class="sw-btn" onclick="show(6,this)">👟 E-Commerce</button>
+</div>
+
+<!-- ================================================================
+     SITE 1: TECH SAAS — ARKIVE
+================================================================ -->
+<div id="s1" class="site active">
+  <nav class="s1-nav">
+    <div class="s1-logo">ark<span>ive</span></div>
+    <ul class="s1-navlinks">
+      <li><a href="#">Product</a></li><li><a href="#">Solutions</a></li>
+      <li><a href="#">Pricing</a></li><li><a href="#">Docs</a></li><li><a href="#">Blog</a></li>
+    </ul>
+    <button class="s1-nav-cta">Start Free Trial</button>
+  </nav>
+
+  <!-- Video Hero -->
+  <section class="s1-hero">
+    <div class="s1-video-bg">
+      <!-- Embedded ambient tech video (muted, autoplay) -->
+      <iframe src="https://www.youtube.com/embed/gWSmQbOAcAE?autoplay=1&mute=1&loop=1&playlist=gWSmQbOAcAE&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+    <div class="s1-video-overlay"></div>
+    <div class="s1-particles">
+      <div class="s1-particle p1"></div><div class="s1-particle p2"></div>
+      <div class="s1-particle p3"></div><div class="s1-particle p4"></div>
+      <div class="s1-particle p5"></div><div class="s1-particle p6"></div>
+    </div>
+    <div class="s1-hero-content">
+      <div class="s1-tag"><div class="s1-dot"></div>v3.0 just launched — 10× faster pipelines</div>
+      <h1>The Data Platform<br><span class="grd">Built for Scale.</span><br>Built to Last.</h1>
+      <p>Archive, analyze, and activate your data in real time. One platform — infinite possibilities for teams that refuse to slow down.</p>
+      <div class="s1-btns">
+        <button class="s1-btn-p">Get Started Free →</button>
+        <button class="s1-btn-g">▷ Watch Demo</button>
+      </div>
+    </div>
+    <div class="s1-scroll-hint">
+      <div class="s1-scroll-line"></div><span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="s1-stats">
+    <div class="s1-stat"><div class="s1-stat-n">80<span>K+</span></div><div class="s1-stat-l">Teams Worldwide</div></div>
+    <div class="s1-stat"><div class="s1-stat-n">99<span>.99%</span></div><div class="s1-stat-l">Uptime SLA</div></div>
+    <div class="s1-stat"><div class="s1-stat-n">5<span>B+</span></div><div class="s1-stat-l">Events/Day</div></div>
+    <div class="s1-stat"><div class="s1-stat-n">120<span>ms</span></div><div class="s1-stat-l">P99 Latency</div></div>
+  </div>
+
+  <!-- Dashboard + features -->
+  <div class="s1-dashboard-section">
+    <div class="s1-dashboard-text">
+      <div class="s1-tag-small">— Platform Overview</div>
+      <h2>Your entire data stack,<br>finally unified</h2>
+      <p>No more switching between 8 different tools. Arkive brings ingest, transform, store, and visualize into one seamless experience your team will actually love.</p>
+      <div class="s1-features-mini">
+        <div class="s1-feat"><div class="s1-feat-icon">⚡</div>Real-time streaming ingestion at any scale</div>
+        <div class="s1-feat"><div class="s1-feat-icon">🔒</div>SOC 2 & ISO 27001 certified from day one</div>
+        <div class="s1-feat"><div class="s1-feat-icon">🧩</div>200+ native integrations, no code required</div>
+        <div class="s1-feat"><div class="s1-feat-icon">📊</div>AI-powered anomaly detection & insights</div>
+      </div>
+    </div>
+    <div class="s1-dashboard-img">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80" alt="Dashboard screenshot" loading="lazy">
+      <div class="s1-dash-glow"></div>
+    </div>
+  </div>
+
+  <!-- Feature cards -->
+  <section class="s1-section">
+    <div class="s1-tag-small">— Core Features</div>
+    <h2 style="font-family:'Sora',sans-serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.15;letter-spacing:-1px">Everything your data team needs,<br>nothing they don't</h2>
+    <div class="s1-cards">
+      <div class="s1-card"><div class="s1-card-icon">⚡</div><h3>Real-time Streaming</h3><p>Sub-second ingestion from any source. Kafka, Kinesis, webhooks — all handled with auto-scaling built in.</p></div>
+      <div class="s1-card"><div class="s1-card-icon">🧠</div><h3>AI Copilot</h3><p>Write SQL in plain English. Arkive's AI understands your schema, suggests optimizations, and flags anomalies automatically.</p></div>
+      <div class="s1-card"><div class="s1-card-icon">🛡️</div><h3>Enterprise Security</h3><p>Field-level encryption, fine-grained RBAC, full audit logs, and data residency controls for any region.</p></div>
+      <div class="s1-card"><div class="s1-card-icon">📈</div><h3>Live Dashboards</h3><p>Drag-and-drop dashboard builder with 40+ chart types. Share with a link, embed anywhere, export anytime.</p></div>
+      <div class="s1-card"><div class="s1-card-icon">🌐</div><h3>Global Replication</h3><p>Multi-region active-active replication. 99.99% durability with point-in-time recovery up to 90 days.</p></div>
+      <div class="s1-card"><div class="s1-card-icon">🔧</div><h3>Developer API</h3><p>REST, GraphQL & gRPC. SDKs in Python, Node, Go, Java, Ruby. OpenAPI spec with live sandbox environment.</p></div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="s1-section" style="padding-top:0">
+    <div class="s1-tag-small">— Testimonials</div>
+    <h2 style="font-family:'Sora',sans-serif;font-size:clamp(26px,3.5vw,44px);font-weight:700;color:#fff;line-height:1.15;letter-spacing:-1px">Trusted by teams building the future</h2>
+    <div class="s1-testi-grid">
+      <div class="s1-testi">
+        <div class="s1-testi-stars">★★★★★</div>
+        <p>"We replaced 4 separate tools with Arkive and cut our infra bill by 60%. The AI copilot alone saves my team 10 hours a week."</p>
+        <div class="s1-testi-author">
+          <div class="s1-avatar-img"><img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&auto=format&fit=crop&q=80" alt="Avatar"></div>
+          <div><div class="s1-tname">Jordan Park</div><div class="s1-trole">Head of Data · Orion Labs</div></div>
+        </div>
+      </div>
+      <div class="s1-testi">
+        <div class="s1-testi-stars">★★★★★</div>
+        <p>"Went from zero to production data pipeline in under 2 hours. The documentation is the best I've ever seen from a dev tool."</p>
+        <div class="s1-testi-author">
+          <div class="s1-avatar-img"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&auto=format&fit=crop&q=80" alt="Avatar"></div>
+          <div><div class="s1-tname">Aisha Mensah</div><div class="s1-trole">CTO · Pulse Fintech</div></div>
+        </div>
+      </div>
+      <div class="s1-testi">
+        <div class="s1-testi-stars">★★★★★</div>
+        <p>"The multi-region replication is rock solid. We had zero incidents during our 10× Black Friday traffic spike. Zero."</p>
+        <div class="s1-testi-author">
+          <div class="s1-avatar-img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Avatar"></div>
+          <div><div class="s1-tname">Marcus Lindqvist</div><div class="s1-trole">VP Eng · Northwave</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="s1-cta-banner" style="margin:0 64px 80px">
+    <h2>Start building in minutes</h2>
+    <p>Free 14-day trial. No credit card required. Cancel any time. Seriously.</p>
+    <div class="s1-btns">
+      <button class="s1-btn-p">Create Free Account</button>
+      <button class="s1-btn-g">Talk to Sales</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="s1-footer">
+      <div class="s1-footer-grid">
+        <div class="s1-footer-brand">
+          <div class="s1-logo">ark<span>ive</span></div>
+          <p>The modern data platform for teams that move fast and need data that keeps up.</p>
+        </div>
+        <div class="s1-fcol"><h4>Product</h4><ul><li><a href="#">Features</a></li><li><a href="#">Integrations</a></li><li><a href="#">Pricing</a></li><li><a href="#">Changelog</a></li></ul></div>
+        <div class="s1-fcol"><h4>Developers</h4><ul><li><a href="#">Documentation</a></li><li><a href="#">API Reference</a></li><li><a href="#">Status</a></li><li><a href="#">Community</a></li></ul></div>
+        <div class="s1-fcol"><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Privacy</a></li></ul></div>
+      </div>
+      <div class="s1-footer-bottom"><span>© 2026 Arkive Inc. All rights reserved.</span><span>SOC2 · ISO27001 · GDPR</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ================================================================
+     SITE 2: RESTAURANT — LUMIÈRE
+================================================================ -->
+<div id="s2" class="site">
+  <nav class="s2-nav">
+    <div class="s2-logo">LUMIÈRE</div>
+    <ul class="s2-navlinks">
+      <li><a href="#">Menu</a></li><li><a href="#">Story</a></li>
+      <li><a href="#">Wine</a></li><li><a href="#">Events</a></li><li><a href="#">Contact</a></li>
+    </ul>
+    <button class="s2-nav-res">Reserve a Table</button>
+  </nav>
+
+  <!-- Hero with real food/restaurant image -->
+  <section class="s2-hero">
+    <div class="s2-hero-bg">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&auto=format&fit=crop&q=85" alt="Fine dining restaurant" loading="eager">
+    </div>
+    <div class="s2-hero-overlay"></div>
+    <div class="s2-hero-content">
+      <div class="s2-hero-eyebrow">Est. 2011 · Lyon, France</div>
+      <h1>Where Every<br><em>Bite</em> Tells<br>a Story</h1>
+      <p class="s2-hero-desc">A Michelin-starred experience rooted in French tradition, reimagined with ingredients that speak of the season.</p>
+      <div class="s2-hero-btns">
+        <button class="s2-btn-gold">Reserve Now</button>
+        <button class="s2-btn-outline2">Explore Menu</button>
+      </div>
+    </div>
+    <div class="s2-hero-scroll"><div class="s2-scroll-bar"></div><span>Scroll</span></div>
+  </section>
+
+  <!-- Experience strip -->
+  <div class="s2-strip">
+    <div class="s2-strip-item"><div class="s2-strip-icon">⭐</div><div><div class="s2-strip-title">Michelin Starred</div><div class="s2-strip-desc">Awarded 2017 · 2024</div></div></div>
+    <div class="s2-strip-item"><div class="s2-strip-icon">🌿</div><div><div class="s2-strip-title">Farm to Table</div><div class="s2-strip-desc">100% local suppliers</div></div></div>
+    <div class="s2-strip-item"><div class="s2-strip-icon">🍷</div><div><div class="s2-strip-title">Curated Wine Cellar</div><div class="s2-strip-desc">600+ labels from 18 regions</div></div></div>
+  </div>
+
+  <!-- Menu / Dishes -->
+  <section class="s2-menu">
+    <div class="s2-menu-header">
+      <div>
+        <div class="s2-sec-eyebrow">Seasonal Highlights</div>
+        <div class="s2-sec-title">Tonight's<br><em>Signatures</em></div>
+      </div>
+      <a href="#" class="s2-see-all">Full Menu →</a>
+    </div>
+    <div class="s2-menu-grid">
+      <div class="s2-dish">
+        <div class="s2-dish-img">
+          <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&auto=format&fit=crop&q=80" alt="Signature pasta dish" loading="lazy">
+        </div>
+        <div class="s2-dish-cat">Pasta · Signature</div>
+        <div class="s2-dish-name">Saffron Tagliolini</div>
+        <div class="s2-dish-desc">Hand-rolled pasta, 24-hour Bourgogne broth, shaved truffle, micro herbs</div>
+        <div class="s2-dish-price">€ 48</div>
+      </div>
+      <div class="s2-dish">
+        <div class="s2-dish-img">
+          <img src="https://images.unsplash.com/photo-1540189549336-e6e99eb4b5c8?w=600&auto=format&fit=crop&q=80" alt="Salad dish" loading="lazy">
+        </div>
+        <div class="s2-dish-cat">Starter · Seasonal</div>
+        <div class="s2-dish-name">Garden Herbarium</div>
+        <div class="s2-dish-desc">Wild greens, goat's curd, fermented plum, elderflower vinegar, hazelnuts</div>
+        <div class="s2-dish-price">€ 28</div>
+      </div>
+      <div class="s2-dish">
+        <div class="s2-dish-img">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&auto=format&fit=crop&q=80" alt="Main course fish" loading="lazy">
+        </div>
+        <div class="s2-dish-cat">Mains · Chef's Choice</div>
+        <div class="s2-dish-name">Turbot en Croûte d'Herbes</div>
+        <div class="s2-dish-desc">Wild Atlantic turbot, herb crust, beurre blanc, smoked potato, coastal samphire</div>
+        <div class="s2-dish-price">€ 72</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Interior -->
+  <div class="s2-about">
+    <div class="s2-about-img">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&auto=format&fit=crop&q=80" alt="Restaurant interior" loading="lazy">
+    </div>
+    <div class="s2-about-content">
+      <div class="s2-sec-eyebrow">Our Philosophy</div>
+      <h2 class="s2-sec-title" style="font-size:clamp(28px,3vw,44px)">Cuisine as<br><em>memory-making</em></h2>
+      <p>Chef Élodie Bernard has built Lumière on a single conviction: that great food should make you feel something you'll carry with you long after the plate is cleared.</p>
+      <p>Every dish is constructed around a seasonal ingredient found within 80km of our kitchen — a constraint that forces creativity and rewards curiosity.</p>
+      <div class="s2-gold-line"></div>
+      <button class="s2-btn-gold">Meet Chef Bernard</button>
+    </div>
+  </div>
+
+  <!-- Video / "Watch our story" section -->
+  <section class="s2-video-section" id="s2-video-sec">
+    <div class="s2-video-bg-img">
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=1600&auto=format&fit=crop&q=80" alt="Chef cooking" loading="lazy">
+    </div>
+    <div class="s2-video-overlay2"></div>
+    <div class="s2-video-content" id="s2-video-overlay-content">
+      <div class="s2-play-btn" onclick="playS2Video()">▶</div>
+      <h3>Watch Our Story</h3>
+      <p>A Journey from Farm to Table</p>
+    </div>
+    <div class="s2-video-frame" id="s2iframe">
+      <button class="s2-close-video" onclick="closeS2Video()">✕</button>
+      <iframe src="" id="s2-yt-iframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Reservation Form -->
+  <section class="s2-reservation">
+    <div class="s2-sec-eyebrow">Make a Reservation</div>
+    <div class="s2-sec-title">Join Us for an<br><em>Unforgettable Evening</em></div>
+    <div class="s2-res-form">
+      <input class="s2-input" type="date" placeholder="Date">
+      <input class="s2-input" type="time" placeholder="Time">
+      <select class="s2-input"><option>Guests: 2</option><option>Guests: 3</option><option>Guests: 4</option><option>Guests: 5+</option></select>
+      <button class="s2-res-submit">Reserve Table</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="s2-footer">
+      <div class="s2-footer-grid">
+        <div class="s2-footer-brand">
+          <div class="s2-logo">LUMIÈRE</div>
+          <p>14 Rue des Artisans, Lyon 69001, France<br>reservations@lumiere-lyon.fr<br>+33 4 72 00 00 00</p>
+        </div>
+        <div><h4>Discover</h4><ul><li><a href="#">Our Menu</a></li><li><a href="#">Wine List</a></li><li><a href="#">Private Events</a></li><li><a href="#">Catering</a></li></ul></div>
+        <div><h4>About</h4><ul><li><a href="#">Chef Bernard</a></li><li><a href="#">Our Story</a></li><li><a href="#">Press</a></li><li><a href="#">Gallery</a></li></ul></div>
+      </div>
+      <div class="s2-footer-bottom"><span>© 2026 Lumière Restaurant. All rights reserved.</span><span>Privacy · Terms</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ================================================================
+     SITE 3: PERSONAL PORTFOLIO
+================================================================ -->
+<div id="s3" class="site">
+  <nav class="s3-nav">
+    <div class="s3-logo3">Lena<span>.</span></div>
+    <ul class="s3-navlinks3">
+      <li><a href="#">Work</a></li><li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li><li><a href="#">Blog</a></li>
+    </ul>
+    <button class="s3-nav-hire">Hire Me →</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="s3-hero">
+    <div class="s3-hero-left">
+      <div class="s3-badge3"><div class="s3-avail-dot3"></div>Open to new projects</div>
+      <h1>Product<br><em>Designer</em><br>& <span class="red">Strategist.</span></h1>
+      <p class="s3-hero-desc3">I craft digital experiences that are beautiful, usable, and drive real business results. 7 years. 60+ products shipped. Zero ugly interfaces.</p>
+      <div class="s3-hero-btns3">
+        <button class="s3-btn-red">View My Work</button>
+        <button class="s3-btn-outline3">Download CV</button>
+      </div>
+    </div>
+    <div class="s3-hero-right">
+      <div class="s3-hero-photo">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&auto=format&fit=crop&q=80" alt="Designer portrait" loading="eager">
+      </div>
+      <div class="s3-hero-card">
+        <div class="s3-card-icon3">🏆</div>
+        <div><div class="s3-card-title">Awwwards Winner</div><div class="s3-card-sub">Site of the Year 2025</div></div>
+      </div>
+      <div class="s3-hero-tag">Available Q2 ›</div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <div class="s3-skills">
+    <div class="s3-skill-tag">Product Design</div><div class="s3-skill-tag">UX Research</div>
+    <div class="s3-skill-tag">Design Systems</div><div class="s3-skill-tag">Figma</div>
+    <div class="s3-skill-tag">Prototyping</div><div class="s3-skill-tag">Brand Identity</div>
+    <div class="s3-skill-tag">Motion Design</div><div class="s3-skill-tag">React / HTML&CSS</div>
+    <div class="s3-skill-tag">Webflow</div><div class="s3-skill-tag">A/B Testing</div>
+  </div>
+
+  <!-- Portfolio Work -->
+  <section class="s3-work">
+    <div class="s3-work-header3">
+      <h2>Selected<br>Work.</h2>
+      <button class="s3-btn-outline3">All Projects →</button>
+    </div>
+    <div class="s3-proj-grid">
+      <div class="s3-proj">
+        <div class="s3-proj-img">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&auto=format&fit=crop&q=80" alt="Design mockup" loading="lazy">
+        </div>
+        <div class="s3-proj-info">
+          <div class="s3-proj-tags"><span class="s3-proj-tag">Product · UX · Brand</span></div>
+          <div class="s3-proj-title">Revlo — Complete App Redesign</div>
+        </div>
+      </div>
+      <div class="s3-proj">
+        <div class="s3-proj-img">
+          <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&auto=format&fit=crop&q=80" alt="Design work" loading="lazy">
+        </div>
+        <div class="s3-proj-info">
+          <div class="s3-proj-tags"><span class="s3-proj-tag">Design System</span></div>
+          <div class="s3-proj-title">Forma Design System</div>
+        </div>
+      </div>
+    </div>
+    <div class="s3-proj-grid-2">
+      <div class="s3-proj s3-proj-small">
+        <div class="s3-proj-img">
+          <img src="https://images.unsplash.com/photo-1586717799252-bd134ad00e26?w=500&auto=format&fit=crop&q=80" alt="Portfolio work 3" loading="lazy">
+        </div>
+        <div class="s3-proj-info">
+          <div class="s3-proj-tags"><span class="s3-proj-tag">Mobile · iOS</span></div>
+          <div class="s3-proj-title">Kinship App</div>
+        </div>
+      </div>
+      <div class="s3-proj s3-proj-small">
+        <div class="s3-proj-img">
+          <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=500&auto=format&fit=crop&q=80" alt="Portfolio work 4" loading="lazy">
+        </div>
+        <div class="s3-proj-info">
+          <div class="s3-proj-tags"><span class="s3-proj-tag">Branding</span></div>
+          <div class="s3-proj-title">Lumen Brand Identity</div>
+        </div>
+      </div>
+      <div class="s3-proj s3-proj-small">
+        <div class="s3-proj-img">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&auto=format&fit=crop&q=80" alt="Portfolio work 5" loading="lazy">
+        </div>
+        <div class="s3-proj-info">
+          <div class="s3-proj-tags"><span class="s3-proj-tag">Web · Dev</span></div>
+          <div class="s3-proj-title">Catalyst Landing Page</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Reel -->
+  <section class="s3-reel">
+    <h2>My Design Reel</h2>
+    <p>3 minutes of work that tells the full story</p>
+    <div class="s3-reel-player">
+      <div class="s3-reel-thumb" id="s3-reel-thumb" onclick="playS3Reel()">
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop&q=80" alt="Reel thumbnail" loading="lazy">
+        <div class="s3-reel-play">▶</div>
+      </div>
+      <iframe id="s3-reel-iframe" style="display:none;width:100%;height:100%;border:none" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="s3-services">
+    <div class="s3-services-left">
+      <h2>What I<br>Offer.</h2>
+      <p>End-to-end design from blank canvas to polished product. I work with early-stage startups and scaling companies alike.</p>
+    </div>
+    <div class="s3-service-list">
+      <div class="s3-service-row"><div class="s3-service-num3">01</div><div class="s3-service-name3">Product Design & UX</div><div class="s3-service-arrow3">→</div></div>
+      <div class="s3-service-row"><div class="s3-service-num3">02</div><div class="s3-service-name3">Brand Identity & Strategy</div><div class="s3-service-arrow3">→</div></div>
+      <div class="s3-service-row"><div class="s3-service-num3">03</div><div class="s3-service-name3">Design Systems</div><div class="s3-service-arrow3">→</div></div>
+      <div class="s3-service-row"><div class="s3-service-num3">04</div><div class="s3-service-name3">Webflow & Frontend Dev</div><div class="s3-service-arrow3">→</div></div>
+      <div class="s3-service-row"><div class="s3-service-num3">05</div><div class="s3-service-name3">Motion & Micro-interactions</div><div class="s3-service-arrow3">→</div></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="s3-contact">
+    <div>
+      <h2>Let's work<br>together.</h2>
+      <p>Have a project in mind? I'd love to hear about it. Reach out and let's start a conversation.</p>
+      <span class="s3-contact-email">lena@design.studio</span>
+      <div style="display:flex;gap:16px">
+        <a href="#" style="color:#888;font-size:14px;text-decoration:none">LinkedIn ↗</a>
+        <a href="#" style="color:#888;font-size:14px;text-decoration:none">Dribbble ↗</a>
+        <a href="#" style="color:#888;font-size:14px;text-decoration:none">Twitter ↗</a>
+      </div>
+    </div>
+    <div class="s3-contact-right">
+      <input class="s3-form-input" type="text" placeholder="Your name">
+      <input class="s3-form-input" type="email" placeholder="Email address">
+      <input class="s3-form-input" type="text" placeholder="Project type">
+      <textarea class="s3-form-textarea" placeholder="Tell me about your project..."></textarea>
+      <button class="s3-form-btn">Send Message →</button>
+    </div>
+  </section>
+
+  <footer class="s3-footer3">
+    <span style="color:#333;font-size:13px">© 2026 Lena Kovacs. Designed with intention.</span>
+    <div class="s3-footer3-socials">
+      <a href="#" class="s3-social-link">LinkedIn</a>
+      <a href="#" class="s3-social-link">Dribbble</a>
+      <a href="#" class="s3-social-link">Twitter</a>
+      <a href="#" class="s3-social-link">Behance</a>
+    </div>
+  </footer>
+</div>
+
+<!-- ================================================================
+     SITE 4: REAL ESTATE — MERIDIAN
+================================================================ -->
+<div id="s4" class="site">
+  <nav class="s4-nav">
+    <div class="s4-logo">Meridian<span>.</span></div>
+    <ul class="s4-navlinks4">
+      <li><a href="#">Buy</a></li><li><a href="#">Rent</a></li>
+      <li><a href="#">Sell</a></li><li><a href="#">Agents</a></li><li><a href="#">Blog</a></li>
+    </ul>
+    <div class="s4-nav-btns">
+      <button class="s4-nav-btn4 outline">Sign In</button>
+      <button class="s4-nav-btn4 fill">List Property</button>
+    </div>
+  </nav>
+
+  <section class="s4-hero">
+    <div class="s4-hero-img">
+      <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&auto=format&fit=crop&q=85" alt="Luxury home" loading="eager">
+    </div>
+    <div class="s4-hero-grad"></div>
+    <div class="s4-hero-content">
+      <div class="s4-hero-badge">🏠 #1 Agency in East Africa 2025</div>
+      <h1>Find Your<br>Perfect Place<br>to Call Home</h1>
+      <p>Browse thousands of verified listings across Nairobi, Kigali, and beyond. Your dream property is one search away.</p>
+      <div class="s4-search-box">
+        <select class="s4-search-sel"><option>🏙 Kigali</option><option>🏙 Nairobi</option><option>🏙 Kampala</option><option>🏙 Dar es Salaam</option></select>
+        <select class="s4-search-sel"><option>🏘 All Types</option><option>🏡 House</option><option>🏢 Apartment</option><option>🏗 Land</option></select>
+        <select class="s4-search-sel"><option>💰 Any Price</option><option>Under $100K</option><option>$100K–$250K</option><option>$250K+</option></select>
+        <button class="s4-search-btn">🔍 Search</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="s4-stats">
+    <div class="s4-stat4"><div class="s4-stat4-n">12<span>K+</span></div><div class="s4-stat4-l">Active Listings</div></div>
+    <div class="s4-stat4"><div class="s4-stat4-n">98<span>%</span></div><div class="s4-stat4-l">Client Satisfaction</div></div>
+    <div class="s4-stat4"><div class="s4-stat4-n">340<span>+</span></div><div class="s4-stat4-l">Expert Agents</div></div>
+    <div class="s4-stat4"><div class="s4-stat4-n">15</div><div class="s4-stat4-l">Years in Business</div></div>
+  </div>
+
+  <!-- Listings -->
+  <section class="s4-listings">
+    <div class="s4-section-header4">
+      <h2>Featured Properties</h2>
+      <div class="s4-filter-tabs">
+        <button class="s4-tab active">All</button>
+        <button class="s4-tab">Buy</button>
+        <button class="s4-tab">Rent</button>
+      </div>
+    </div>
+    <div class="s4-listing-grid">
+      <div class="s4-listing">
+        <div class="s4-listing-img">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&auto=format&fit=crop&q=80" alt="Property listing 1" loading="lazy">
+          <span class="s4-listing-badge s4-badge-new">NEW</span>
+          <div class="s4-listing-save">🤍</div>
+        </div>
+        <div class="s4-listing-body">
+          <div class="s4-listing-price">$285,000 <span>For Sale</span></div>
+          <div class="s4-listing-address">📍 Kiyovu, Kigali</div>
+          <div class="s4-listing-specs">
+            <div class="s4-spec">🛏 <span>4</span> Beds</div>
+            <div class="s4-spec">🛁 <span>3</span> Baths</div>
+            <div class="s4-spec">📐 <span>240</span> m²</div>
+          </div>
+        </div>
+      </div>
+      <div class="s4-listing">
+        <div class="s4-listing-img">
+          <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=600&auto=format&fit=crop&q=80" alt="Property listing 2" loading="lazy">
+          <span class="s4-listing-badge s4-badge-hot">HOT</span>
+          <div class="s4-listing-save">🤍</div>
+        </div>
+        <div class="s4-listing-body">
+          <div class="s4-listing-price">$1,800<span>/mo · Rent</span></div>
+          <div class="s4-listing-address">📍 Nyarutarama, Kigali</div>
+          <div class="s4-listing-specs">
+            <div class="s4-spec">🛏 <span>3</span> Beds</div>
+            <div class="s4-spec">🛁 <span>2</span> Baths</div>
+            <div class="s4-spec">📐 <span>180</span> m²</div>
+          </div>
+        </div>
+      </div>
+      <div class="s4-listing">
+        <div class="s4-listing-img">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80" alt="Property listing 3" loading="lazy">
+          <span class="s4-listing-badge s4-badge-new">NEW</span>
+          <div class="s4-listing-save">🤍</div>
+        </div>
+        <div class="s4-listing-body">
+          <div class="s4-listing-price">$420,000 <span>For Sale</span></div>
+          <div class="s4-listing-address">📍 Kimihurura, Kigali</div>
+          <div class="s4-listing-specs">
+            <div class="s4-spec">🛏 <span>5</span> Beds</div>
+            <div class="s4-spec">🛁 <span>4</span> Baths</div>
+            <div class="s4-spec">📐 <span>380</span> m²</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Tour / Video -->
+  <section class="s4-tour">
+    <div class="s4-tour-text">
+      <h2>Virtual Property Tours</h2>
+      <p>Can't visit in person? No problem. Our HD 360° virtual tours let you walk through any property from anywhere in the world — on any device.</p>
+      <div class="s4-tour-features">
+        <div class="s4-tour-feat"><div class="s4-tour-feat-icon">🎥</div>4K HD video walkthroughs</div>
+        <div class="s4-tour-feat"><div class="s4-tour-feat-icon">🌐</div>360° interactive panoramas</div>
+        <div class="s4-tour-feat"><div class="s4-tour-feat-icon">📱</div>Works on mobile, tablet & desktop</div>
+        <div class="s4-tour-feat"><div class="s4-tour-feat-icon">💬</div>Live agent Q&A during tour</div>
+      </div>
+      <button class="s4-nav-btn4 fill" style="padding:14px 36px;font-size:15px">Start Virtual Tour →</button>
+    </div>
+    <div class="s4-tour-video">
+      <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop&q=80" alt="Luxury living room" loading="lazy">
+      <div class="s4-tour-play" onclick="playS4Tour()">▶</div>
+    </div>
+  </section>
+
+  <!-- Agents -->
+  <section class="s4-agents">
+    <h2>Meet Our Top Agents</h2>
+    <div class="s4-agent-grid">
+      <div class="s4-agent">
+        <div class="s4-agent-photo"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&auto=format&fit=crop&q=80" alt="Agent 1" loading="lazy"></div>
+        <div class="s4-agent-name">David Mugisha</div>
+        <div class="s4-agent-title">Senior Residential Agent</div>
+        <div class="s4-agent-contact"><button class="s4-agent-btn">Call</button><button class="s4-agent-btn">Message</button></div>
+      </div>
+      <div class="s4-agent">
+        <div class="s4-agent-photo"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&fit=crop&q=80" alt="Agent 2" loading="lazy"></div>
+        <div class="s4-agent-name">Grace Uwamahoro</div>
+        <div class="s4-agent-title">Luxury Properties Specialist</div>
+        <div class="s4-agent-contact"><button class="s4-agent-btn">Call</button><button class="s4-agent-btn">Message</button></div>
+      </div>
+      <div class="s4-agent">
+        <div class="s4-agent-photo"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop&q=80" alt="Agent 3" loading="lazy"></div>
+        <div class="s4-agent-name">Patrick Ndayishimiye</div>
+        <div class="s4-agent-title">Commercial Real Estate</div>
+        <div class="s4-agent-contact"><button class="s4-agent-btn">Call</button><button class="s4-agent-btn">Message</button></div>
+      </div>
+      <div class="s4-agent">
+        <div class="s4-agent-photo"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Agent 4" loading="lazy"></div>
+        <div class="s4-agent-name">Amina Habimana</div>
+        <div class="s4-agent-title">Investment Properties</div>
+        <div class="s4-agent-contact"><button class="s4-agent-btn">Call</button><button class="s4-agent-btn">Message</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <div class="s4-newsletter">
+    <div><h2>Get New Listings First</h2><p>Be notified the moment a property matching your criteria hits the market.</p></div>
+    <div class="s4-nl-form">
+      <input class="s4-nl-input" type="email" placeholder="Enter your email address">
+      <button class="s4-nl-btn">Notify Me</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="s4-footer">
+      <div class="s4-footer-grid">
+        <div class="s4-fcol4">
+          <div class="s4-logo">Meridian<span style="color:#2a6b4a">.</span></div>
+          <p style="font-size:14px;color:#888;line-height:1.7;max-width:240px;margin-top:14px">East Africa's most trusted property agency. 15 years. 12,000+ happy homeowners.</p>
+        </div>
+        <div class="s4-fcol4"><h4>Browse</h4><ul><li><a href="#">Buy</a></li><li><a href="#">Rent</a></li><li><a href="#">Commercial</a></li><li><a href="#">New Builds</a></li></ul></div>
+        <div class="s4-fcol4"><h4>Services</h4><ul><li><a href="#">Property Valuation</a></li><li><a href="#">Mortgage Advice</a></li><li><a href="#">Legal Services</a></li><li><a href="#">Property Management</a></li></ul></div>
+        <div class="s4-fcol4"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Our Agents</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
+      </div>
+      <div class="s4-footer-bottom"><span>© 2026 Meridian Properties Ltd. All rights reserved.</span><span>Privacy · Terms · Cookie Policy</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ================================================================
+     SITE 5: HEALTHCARE — VITACARE
+================================================================ -->
+<div id="s5" class="site">
+  <nav class="s5-nav">
+    <div class="s5-logo">Vita<span>Care</span><sub>™</sub></div>
+    <ul class="s5-navlinks5">
+      <li><a href="#">Services</a></li><li><a href="#">Doctors</a></li>
+      <li><a href="#">Locations</a></li><li><a href="#">Patient Portal</a></li><li><a href="#">About</a></li>
+    </ul>
+    <div class="s5-nav-actions5">
+      <span class="s5-phone">📞 +250 788 000 000</span>
+      <button class="s5-book-btn">Book Appointment</button>
+    </div>
+  </nav>
+
+  <section class="s5-hero">
+    <div class="s5-hero-left">
+      <div class="s5-hero-label">🏥 Rwanda's Top-Rated Clinic</div>
+      <h1>Your Health<br>Deserves the<br><span>Best Care</span></h1>
+      <p class="s5-hero-desc5">World-class healthcare, compassionate doctors, and cutting-edge technology — all in one place. Because your wellbeing can't wait.</p>
+      <div class="s5-hero-btns5">
+        <button class="s5-btn-blue">Book an Appointment</button>
+        <button class="s5-btn-wh">▷ Watch Our Story</button>
+      </div>
+      <div class="s5-trust-badges">
+        <div class="s5-badge5"><span class="s5-badge5-icon">🏆</span>ISO 9001 Certified</div>
+        <div class="s5-badge5"><span class="s5-badge5-icon">✅</span>WHO Accredited</div>
+        <div class="s5-badge5"><span class="s5-badge5-icon">🔒</span>HIPAA Compliant</div>
+      </div>
+    </div>
+    <div class="s5-hero-right">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&auto=format&fit=crop&q=80" alt="Doctor" loading="eager">
+      <div class="s5-hero-stat-card">
+        <div class="s5-stat-card-n">50K+</div>
+        <div class="s5-stat-card-l">Patients Served</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="s5-services">
+    <div class="s5-sec-header5">
+      <span class="s5-sec-label5">Our Specialties</span>
+      <h2 class="s5-sec-title5">Comprehensive Care<br>Under One Roof</h2>
+    </div>
+    <div class="s5-service-grid5">
+      <div class="s5-service-card"><div class="s5-service-icon5">❤️</div><h3>Cardiology</h3><p>Advanced cardiac care including ECG, stress tests, and minimally invasive procedures.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+      <div class="s5-service-card"><div class="s5-service-icon5">🧠</div><h3>Neurology</h3><p>Expert diagnosis and treatment for neurological conditions from headaches to stroke care.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+      <div class="s5-service-card"><div class="s5-service-icon5">🦷</div><h3>Dental Care</h3><p>Complete dental services from routine cleanings to cosmetic and restorative dentistry.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+      <div class="s5-service-card"><div class="s5-service-icon5">👁</div><h3>Ophthalmology</h3><p>Comprehensive eye care including LASIK surgery, cataract removal, and glaucoma treatment.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+      <div class="s5-service-card"><div class="s5-service-icon5">🏃</div><h3>Sports Medicine</h3><p>Injury prevention, physiotherapy, and performance optimization for athletes at all levels.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+      <div class="s5-service-card"><div class="s5-service-icon5">🍼</div><h3>Pediatrics</h3><p>Child-friendly environment with experienced pediatricians for care from newborn to adolescent.</p><a href="#" class="s5-learn-more">Learn more →</a></div>
+    </div>
+  </section>
+
+  <!-- Doctors -->
+  <section class="s5-doctors">
+    <div class="s5-doctors-header">
+      <span class="s5-sec-label5">Our Team</span>
+      <h2 class="s5-sec-title5">Meet Our Specialists</h2>
+    </div>
+    <div class="s5-doctor-grid">
+      <div class="s5-doctor-card">
+        <div class="s5-doctor-photo"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=300&auto=format&fit=crop&q=80" alt="Doctor 1" loading="lazy"></div>
+        <div class="s5-doctor-info">
+          <div class="s5-doctor-name">Dr. Amara Diallo</div>
+          <div class="s5-doctor-spec">Cardiologist</div>
+          <div class="s5-doctor-rating"><span class="s5-stars5">★★★★★</span> 4.9 (214 reviews)</div>
+          <button class="s5-book-doctor">Book Appointment</button>
+        </div>
+      </div>
+      <div class="s5-doctor-card">
+        <div class="s5-doctor-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80" alt="Doctor 2" loading="lazy"></div>
+        <div class="s5-doctor-info">
+          <div class="s5-doctor-name">Dr. Sarah Nkusi</div>
+          <div class="s5-doctor-spec">Neurologist</div>
+          <div class="s5-doctor-rating"><span class="s5-stars5">★★★★★</span> 4.8 (189 reviews)</div>
+          <button class="s5-book-doctor">Book Appointment</button>
+        </div>
+      </div>
+      <div class="s5-doctor-card">
+        <div class="s5-doctor-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&auto=format&fit=crop&q=80" alt="Doctor 3" loading="lazy"></div>
+        <div class="s5-doctor-info">
+          <div class="s5-doctor-name">Dr. James Okafor</div>
+          <div class="s5-doctor-spec">Pediatrician</div>
+          <div class="s5-doctor-rating"><span class="s5-stars5">★★★★★</span> 4.9 (312 reviews)</div>
+          <button class="s5-book-doctor">Book Appointment</button>
+        </div>
+      </div>
+      <div class="s5-doctor-card">
+        <div class="s5-doctor-photo"><img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&auto=format&fit=crop&q=80" alt="Doctor 4" loading="lazy"></div>
+        <div class="s5-doctor-info">
+          <div class="s5-doctor-name">Dr. Fatima Al-Rashid</div>
+          <div class="s5-doctor-spec">Ophthalmologist</div>
+          <div class="s5-doctor-rating"><span class="s5-stars5">★★★★★</span> 4.7 (156 reviews)</div>
+          <button class="s5-book-doctor">Book Appointment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Patient Testimonials -->
+  <section class="s5-testimonials">
+    <h2>What Our Patients Say</h2>
+    <div class="s5-testi-grid5">
+      <div class="s5-testi-card">
+        <div class="s5-testi-rating5">★★★★★</div>
+        <p>"Dr. Diallo saved my life. The entire cardiology team was attentive, thorough, and genuinely caring from diagnosis through recovery."</p>
+        <div class="s5-testi-author5">
+          <div class="s5-testi-av5"><img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=80&auto=format&fit=crop&q=80" alt="Patient" loading="lazy"></div>
+          <div><div class="s5-testi-n5">Emmanuel K.</div><div class="s5-testi-r5">Cardiac Patient</div></div>
+        </div>
+      </div>
+      <div class="s5-testi-card">
+        <div class="s5-testi-rating5">★★★★★</div>
+        <p>"My children have been seeing Dr. Okafor for 4 years. He's brilliant, patient, and always makes them feel safe. We won't go anywhere else."</p>
+        <div class="s5-testi-author5">
+          <div class="s5-testi-av5"><img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=80&auto=format&fit=crop&q=80" alt="Patient" loading="lazy"></div>
+          <div><div class="s5-testi-n5">Marie-Claire U.</div><div class="s5-testi-r5">Mother of 3</div></div>
+        </div>
+      </div>
+      <div class="s5-testi-card">
+        <div class="s5-testi-rating5">★★★★★</div>
+        <p>"The online booking system is seamless, waiting times are minimal, and the facility is spotless. Best healthcare experience I've had."</p>
+        <div class="s5-testi-author5">
+          <div class="s5-testi-av5"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80" alt="Patient" loading="lazy"></div>
+          <div><div class="s5-testi-n5">Robert M.</div><div class="s5-testi-r5">General Patient</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="s5-cta">
+    <div><h2>Your health can't wait.<br>Book today.</h2><p>Same-day appointments available for urgent care. Walk-ins welcome 7 days a week.</p></div>
+    <div class="s5-cta-btns5">
+      <button class="s5-cta-btn-w">Book Appointment</button>
+      <button class="s5-cta-btn-t">📞 Call Us Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="s5-footer">
+      <div class="s5-footer-grid">
+        <div class="s5-fcol5">
+          <div class="s5-logo" style="color:#6a8aaa">Vita<span style="color:#4a6aaa">Care</span></div>
+          <p>Delivering world-class healthcare to East Africa since 2010. ISO certified. WHO accredited.</p>
+        </div>
+        <div class="s5-fcol5"><h4>Services</h4><ul><li><a href="#">Cardiology</a></li><li><a href="#">Neurology</a></li><li><a href="#">Pediatrics</a></li><li><a href="#">All Services</a></li></ul></div>
+        <div class="s5-fcol5"><h4>Patients</h4><ul><li><a href="#">Book Appointment</a></li><li><a href="#">Patient Portal</a></li><li><a href="#">Insurance</a></li><li><a href="#">Medical Records</a></li></ul></div>
+        <div class="s5-fcol5"><h4>About</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Our Team</a></li><li><a href="#">Locations</a></li><li><a href="#">Careers</a></li></ul></div>
+      </div>
+      <div class="s5-footer-bottom5"><span>© 2026 VitaCare Medical Group. All rights reserved.</span><span>Privacy Policy · Terms · HIPAA Notice</span></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ================================================================
+     SITE 6: E-COMMERCE — KŌDO STREETWEAR
+================================================================ -->
+<div id="s6" class="site">
+  <div class="s6-top-bar">FREE WORLDWIDE SHIPPING ON ORDERS OVER $120 · USE CODE: KODO2026</div>
+  <nav class="s6-nav">
+    <div class="s6-logo">KŌ<span>DO</span></div>
+    <ul class="s6-navlinks6">
+      <li><a href="#">New Drops</a></li><li><a href="#">Collections</a></li>
+      <li><a href="#">Collabs</a></li><li><a href="#">Sale</a></li>
+    </ul>
+    <div class="s6-nav-right">
+      <div class="s6-nav-icons">
+        <span>🔍</span>
+        <span>👤</span>
+        <span style="position:relative">🛒<span class="s6-cart-badge">3</span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="s6-hero">
+    <div class="s6-hero-bg">
+      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=1600&auto=format&fit=crop&q=85" alt="Streetwear hero" loading="eager">
+    </div>
+    <div class="s6-hero-grad"></div>
+    <div class="s6-hero-content">
+      <div class="s6-hero-inner">
+        <div class="s6-hero-season">SS26 Drop 01 — Now Live</div>
+        <h1>WEAR THE<br><span class="neon">FUTURE.</span><br>OWN THE STREETS.</h1>
+        <p class="s6-hero-desc6">Limited-edition streetwear forged at the intersection of Tokyo street culture and West African energy. Every piece tells a story.</p>
+        <div class="s6-hero-btns6">
+          <button class="s6-btn-lime">Shop New Drop →</button>
+          <button class="s6-btn-ghost6">▷ Watch Lookbook</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="s6-ticker">
+    <div class="s6-ticker-inner">
+      <span class="s6-ticker-item">NEW DROP</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">LIMITED EDITION</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">FREE SHIPPING $120+</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">SS26 COLLECTION</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">KIGALI · TOKYO · PARIS</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">NEW DROP</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">LIMITED EDITION</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">FREE SHIPPING $120+</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">SS26 COLLECTION</span><span class="s6-ticker-sep">✦</span>
+      <span class="s6-ticker-item">KIGALI · TOKYO · PARIS</span><span class="s6-ticker-sep">✦</span>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <section class="s6-products">
+    <div class="s6-products-header">
+      <h2>The Drop <span>01</span></h2>
+      <a href="#" class="s6-see-all6">All Products →</a>
+    </div>
+    <div class="s6-product-grid">
+      <div class="s6-product">
+        <div class="s6-product-img">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop&q=80" alt="Sneakers" loading="lazy">
+          <span class="s6-product-badge6 s6-badge-new6">NEW</span>
+        </div>
+        <div class="s6-product-info">
+          <div class="s6-product-cat6">Footwear</div>
+          <div class="s6-product-name">KŌDO Vertex '26</div>
+          <div class="s6-product-bottom"><span class="s6-product-price">$185</span><button class="s6-add-btn">+</button></div>
+        </div>
+      </div>
+      <div class="s6-product">
+        <div class="s6-product-img">
+          <img src="https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=500&auto=format&fit=crop&q=80" alt="Hoodie" loading="lazy">
+          <span class="s6-product-badge6 s6-badge-new6">DROP</span>
+        </div>
+        <div class="s6-product-info">
+          <div class="s6-product-cat6">Tops</div>
+          <div class="s6-product-name">Midnight Oversized Hoodie</div>
+          <div class="s6-product-bottom"><span class="s6-product-price">$128</span><button class="s6-add-btn">+</button></div>
+        </div>
+      </div>
+      <div class="s6-product">
+        <div class="s6-product-img">
+          <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&auto=format&fit=crop&q=80" alt="Jacket" loading="lazy">
+        </div>
+        <div class="s6-product-info">
+          <div class="s6-product-cat6">Outerwear</div>
+          <div class="s6-product-name">Tokyo Rain Shell</div>
+          <div class="s6-product-bottom"><span class="s6-product-price">$220</span><button class="s6-add-btn">+</button></div>
+        </div>
+      </div>
+      <div class="s6-product">
+        <div class="s6-product-img">
+          <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&auto=format&fit=crop&q=80" alt="Shoes 2" loading="lazy">
+          <span class="s6-product-badge6 s6-badge-sold">ALMOST GONE</span>
+        </div>
+        <div class="s6-product-info">
+          <div class="s6-product-cat6">Footwear</div>
+          <div class="s6-product-name">KŌDO Low 002</div>
+          <div class="s6-product-bottom"><span class="s6-product-price">$155</span><button class="s6-add-btn">+</button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lookbook Video section -->
+  <section class="s6-lookbook">
+    <div class="s6-lookbook-bg">
+      <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1600&auto=format&fit=crop&q=80" alt="Lookbook" loading="lazy">
+    </div>
+    <div class="s6-lookbook-grad"></div>
+    <div class="s6-lookbook-content">
+      <div class="s6-lookbook-label">SS26 Lookbook — Now Streaming</div>
+      <h2>THE ART<br>OF <span>DRESSING</span><br>BOLDLY.</h2>
+      <div class="s6-play-large" onclick="playS6Video()">▶</div>
+      <p style="font-size:13px;color:rgba(255,255,255,.4);letter-spacing:3px;text-transform:uppercase">Watch the full lookbook</p>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="s6-categories">
+    <h2>Shop by Category</h2>
+    <div class="s6-cat-grid">
+      <div class="s6-cat">
+        <div class="s6-cat-img"><img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&auto=format&fit=crop&q=80" alt="Footwear" loading="lazy"></div>
+        <div class="s6-cat-label"><div class="s6-cat-name">Footwear</div><div class="s6-cat-count">24 Products</div></div>
+      </div>
+      <div class="s6-cat">
+        <div class="s6-cat-img"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&auto=format&fit=crop&q=80" alt="Apparel" loading="lazy"></div>
+        <div class="s6-cat-label"><div class="s6-cat-name">Apparel</div><div class="s6-cat-count">48 Products</div></div>
+      </div>
+      <div class="s6-cat">
+        <div class="s6-cat-img"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=80" alt="Accessories" loading="lazy"></div>
+        <div class="s6-cat-label"><div class="s6-cat-name">Accessories</div><div class="s6-cat-count">16 Products</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / Newsletter -->
+  <section class="s6-cta6">
+    <h2>JOIN<br>THE KŌDO<br>FAMILY.</h2>
+    <div class="s6-cta6-right">
+      <p>Get early access to new drops, exclusive discounts, and limited collabs before anyone else.</p>
+      <input type="email" placeholder="Enter your email address">
+      <button class="s6-cta6-btn">JOIN NOW →</button>
+    </div>
+  </section>
+
+  <footer class="s6-footer">
+    <div class="s6-footer-top6">
+      <div class="s6-footer-logo6">KŌ<span>DO</span></div>
+      <div class="s6-footer-social6">
+        <a class="s6-soc-link6" href="#">IG</a>
+        <a class="s6-soc-link6" href="#">TT</a>
+        <a class="s6-soc-link6" href="#">TW</a>
+        <a class="s6-soc-link6" href="#">YT</a>
+      </div>
+    </div>
+    <div class="s6-footer-grid6">
+      <div class="s6-fcol6">
+        <div class="s6-footer-logo6" style="font-size:20px;margin-bottom:0">KŌ<span>DO</span></div>
+        <p class="s6-footer-brand6" style="color:#2a2a2a;font-size:14px;line-height:1.7;max-width:240px;margin-top:14px">Born in Kigali. Raised on the streets of Tokyo. Worn by the bold everywhere in between.</p>
+      </div>
+      <div class="s6-fcol6"><h4>Shop</h4><ul><li><a href="#">New Arrivals</a></li><li><a href="#">Best Sellers</a></li><li><a href="#">Collabs</a></li><li><a href="#">Sale</a></li></ul></div>
+      <div class="s6-fcol6"><h4>Help</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns</a></li><li><a href="#">Sizing Guide</a></li><li><a href="#">FAQ</a></li></ul></div>
+      <div class="s6-fcol6"><h4>Brand</h4><ul><li><a href="#">Our Story</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Press</a></li><li><a href="#">Careers</a></li></ul></div>
+    </div>
+    <div class="s6-footer-bottom6">
+      <span>© 2026 KŌDO Brand Ltd. All rights reserved.</span>
+      <span>Privacy · Terms · Cookies · Accessibility</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+// Switcher
+function show(n, btn) {
+  document.querySelectorAll('.site').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sw-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('s' + n).classList.add('active');
+  btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Filter tabs (Site 4)
+document.querySelectorAll('.s4-tab').forEach(tab => {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.s4-tab').forEach(t => t.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+// Site 2: Restaurant video
+function playS2Video() {
+  document.getElementById('s2iframe').classList.add('active');
+  document.getElementById('s2-yt-iframe').src = 'https://www.youtube.com/embed/Q2GFj6-BQEI?autoplay=1&mute=0&controls=1';
+  document.getElementById('s2-video-overlay-content').style.display = 'none';
+}
+function closeS2Video() {
+  document.getElementById('s2iframe').classList.remove('active');
+  document.getElementById('s2-yt-iframe').src = '';
+  document.getElementById('s2-video-overlay-content').style.display = 'block';
+}
+
+// Site 3: Portfolio reel
+function playS3Reel() {
+  document.getElementById('s3-reel-thumb').style.display = 'none';
+  const iframe = document.getElementById('s3-reel-iframe');
+  iframe.style.display = 'block';
+  iframe.src = 'https://www.youtube.com/embed/lmFMEFVFyxc?autoplay=1&controls=1';
+}
+
+// Site 4: Virtual tour
+function playS4Tour() {
+  const tour = document.querySelector('.s4-tour-video');
+  tour.innerHTML = '<iframe src="https://www.youtube.com/embed/ociGHTxlH_k?autoplay=1&controls=1" style="width:100%;height:100%;border:none" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+}
+
+// Site 6: Lookbook video
+function playS6Video() {
+  const lb = document.querySelector('.s6-lookbook');
+  lb.innerHTML = '<iframe src="https://www.youtube.com/embed/5eDo4W_YQGE?autoplay=1&mute=0&controls=1" style="position:absolute;inset:0;width:100%;height:100%;border:none" allow="autoplay; encrypted-media" allowfullscreen></iframe><button onclick="closeS6Video()" style="position:absolute;top:20px;right:20px;z-index:10;background:rgba(0,0,0,.7);color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer">✕</button>';
+  lb.style.position = 'relative';
+}
+function closeS6Video() {
+  location.reload();
+}
+</script>
+</body>
+</html>
